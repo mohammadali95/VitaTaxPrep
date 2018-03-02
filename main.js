@@ -1,9 +1,9 @@
 $(document).ready(() => {
-  $('.event-thumbnail').on('click', () => {
-    $(".popup-overlay, .popup-content").addClass("active");
+  $("#myBtn").on("click", () => {
+    $("#popup").css("display", "block")
   })
   
-  $("#submit-button").on("click", () => {
-    $(".popup-overlay, .popup-content").removeClass("active");
+  $(".close").on("click", () => {
+    $(".modal").css("display", "none")
   })
 })
