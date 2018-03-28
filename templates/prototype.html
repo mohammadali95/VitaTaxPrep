@@ -1,0 +1,114 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+  <section class="container">
+    <div class="row">
+       <figure class="col-sm-12">
+         <h1> Search volunteers </h1>
+       </figure>
+    </div>
+       <figure class="col-sm-8">
+         <div class=row>
+         <table style="width:100%">
+  <tr class="table">
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Event</th>
+    <th>Info </th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>VITA</td>
+    <td> <button class="hide-button">Show Info</button> </td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>Turkey Trot</td>
+    <td> <button class="hide-button">Show Info</button> </td>
+  </tr>
+</table>
+         </div>
+      <button class="hide-button"> Export to Spreadsheet </button>
+         <div class="row" id="info">
+           <!-- where to put info -->
+           <p> Name: </p>
+           <p> Address: </p>
+           <p> City: </p>
+           <p> State: </p>
+           <p> Zip Code: </p>
+           <p> Email: </p>
+           <p> Phone: </p>
+           <p> Date of Birth: </p>
+           <p> Volunteering for: </p>
+           <p> Other languages spoken: </p>
+         </div>
+       </figure>
+      <figure class="col-sm-4" id="sort-box">
+        <h3> Sort by: </h3>
+        <div class=row>
+        <p class="floaters"> Event </p>
+        <select multiple class ="floaters" >
+          <option>Campaign Committee </option>
+	        <option>Jeans and Bling</option>
+	        <option>Turkey Trot</option>
+          <option>Stuff the Bus</option>
+	        <option>Agency Evaluation (Site Visit)</option>
+	        <option>VITA Free Tax Prep</option>
+	        <option>One of the Agencies</option>
+	        <option>Other</option>
+          </select>
+        </div>
+        <div class=row>
+        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple events.</p>
+        </div>
+        <div class=row>
+           <select multiple class ="floaters" >
+          <option>9:00 am </option>
+	        <option>10:00 am </option>
+	        <option>11:00 am </option>
+          <option>Noon</option>
+	        <option>1:00 pm</option>
+	        <option>2:00 pm</option>
+	        <option>3:00 pm</option>
+          </select>
+          <p class="floaters"> to </p>
+           <select multiple class ="floaters" >
+          <option>9:00 am </option>
+	        <option>10:00 am </option>
+	        <option>11:00 am </option>
+          <option>Noon</option>
+	        <option>1:00 pm</option>
+	        <option>2:00 pm</option>
+	        <option>3:00 pm</option>
+          </select>
+        </div>
+        <div class=row>
+          <p class="floaters">Languages</p>
+          <select multiple class="floaters">
+          <option>Spanish </option>
+	        <option>French </option>
+	        <option>German </option>
+          <option>ASL</option>
+	        <option>Mandarin</option>
+	        <option>Hindi</option>
+	        <option>Arabic</option>
+          </select>
+        </div>
+        <div class=row>
+          <p class="floaters">Volunteer Name</p>
+          <input type="text">
+        </div>
+        <div class=row>
+          <button type="button"> Sort </button>
+
+      </figure>
+  </section>
+
+</body>
