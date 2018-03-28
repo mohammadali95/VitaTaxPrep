@@ -1,24 +1,103 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <meta charset='utf-8'/>
+    <title>United Way Events</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/events.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
-    <div id="thumb">
-      <img src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg">
-    </div>
-
-    <button id="myBtn">Event Name</button>
-
-    <div id="popup" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Event Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.</p>
+    <section id="uw-image" class="container">
+      <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/>
+    </section>
+    <section class='container'>
+      <div class='row'>
+        <figure class='col-sm-6'>
+          <p>Jeans and Bling</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+        <figure class='col-sm-6'>
+          <p>Stuff the Bus</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
       </div>
-    </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+    </section>
+    <section class='container'>
+      <div class='row'>
+        <figure class='col-sm-6'>
+          <p>Campaign Coordinator Bootcamp</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+        <figure class='col-sm-6'>
+          <p>CEO Luncheon</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+      </div>
+    </section>
+    <section class='container'>
+      <div class='row'>
+        <figure class='col-sm-6'>
+          <p>Pillar Party</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+        <figure class='col-sm-6'>
+          <p>Turkey Trot</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+      </div>
+    </section>
+    <section class='container'>
+      <div class='row'>
+        <figure class='col-sm-6'>
+          <p>Free Tax Preparation</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+        <figure class='col-sm-6'>
+          <p>#GiveUnitedAR</p>
+          <img id="bus" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/>
+          <button class="details-btn">More Details</button>
+        </figure>
+      </div>
+    </section>
+    <section class="container">
+      <div id="popup" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Event Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.<br></p>
+          <form>
+            Name:<br>
+            <input type="text" name="name"><br>
+            Address:<br>
+            <input type="text" name="address"><br>
+            City:<br>
+            <input type="text" name="city"><br>
+            State:<br>
+            <input type="text" name="state"><br>
+            ZIP Code:<br>
+            <input type="text" name="zip"><br>
+            Email Address:<br>
+            <input type="text" name="email"><br>
+            Phone Number:<br>
+            <input type="text" name="phone"><br>
+            Date of Birth:<br>
+            <input type="text" name="dob"><br>
+            <!-- This would probably be better as a dropdown. -->
+            Volunteering for:<br>
+            <input type="text" name="event"><br>
+            <!-- This would probably be better as radio buttons. -->
+            Languages Spoken:<br>
+            <input type="text" name="languages">
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='events.js') }}"></script>
   </body>
 </html>
