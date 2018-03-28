@@ -6,4 +6,9 @@ $(document).ready(() => {
   $(".close").on("click", () => {
     $(".modal").css("display", "none")
   })
+
+  $(".submit").on("click", () => {
+    $(".modal").css("display", "none")
+  })
+
 })

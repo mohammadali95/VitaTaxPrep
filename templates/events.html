@@ -87,15 +87,23 @@
             Phone Number:<br>
             <input type="text" name="phone"><br>
             Date of Birth:<br>
-            <input type="text" name="dob"><br>
+            <input id="date" type="date"><br />
             <!-- This would probably be better as a dropdown. -->
             Volunteering for:<br>
-            <input type="text" name="event"><br>
+            <select name="Events">
+              <option value="Jeans and Bling">Jeans and Bling</option>
+              <option value="Stuff the Bus">Stuff the Bus</option>
+              <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
+              <option value="CEO Luncheon">CEO Luncheon</option>
+              <option value="TurkeyTrot">TurkeyTrot</option>
+              <option value="Free Tax Preparation">Free Tax Preparation</option>
+            </select>
+            <br />
             <!-- This would probably be better as radio buttons. -->
             Languages Spoken:<br>
-            <input type="text" name="languages"><br>
-            <br>
-            <input type = "submit" value = "submit" /><br>
+            <input type="checkbox" name="language" value="English">English<br>
+            <input type="checkbox" name="language" value="Spanish">Spanish<br>
+            <input type="submit" value="Submit">
         </div>
       </div>
     </section>
