@@ -1,3 +1,12 @@
+
+#uw-image {
+  padding-bottom: 30px;
+}
+
+.row {
+  margin: 15px;
+}
+
 /* The Modal (background) */
 .modal {
     display: none;
@@ -14,6 +23,8 @@
 
 /* Modal Content/Box */
 .modal-content {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
