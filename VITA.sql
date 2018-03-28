@@ -19,7 +19,14 @@ CREATE TABLE hours (
 );
 CREATE TABLE volunteers (
     name text NOT NULL,
-    email text NOT NULL CONSTRAINT volunteers_pk PRIMARY KEY,
+    address text NOT NULL,
+    city text NOT NULL,
+    state text NOT NULL,
+    zip text NOT NULL,
+    email text NOT NULL,
     phone text NOT NULL,
-    address text NOT NULL
+    dob text NOT NULL,
+    event text NOT NULL,
+    languages text NOT NULL
+
 );

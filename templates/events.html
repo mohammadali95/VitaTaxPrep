@@ -71,7 +71,7 @@
           <span class="close">&times;</span>
           <h3>Event Name</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.<br></p>
-          <form>
+          <form action = "{{ url_for('new_volunteer') }}" method = "POST">
             Name:<br>
             <input type="text" name="name"><br>
             Address:<br>
