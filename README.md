@@ -7,3 +7,8 @@
 ## Paste and Run this line: export FLASK_APP=website.py
 ## Paste and Run this line: flask run
 ## For Windows, you must use 'set' instead of 'export'
+
+
+
+
+## ps -fA | grep python
