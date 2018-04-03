@@ -1,11 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>VITA Search Volunteers</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+
+<body>
+
+  <html>
 <head>
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+  <link rel="stylesheet" type="text/css" src="{{ url_for('static', filename='styles/main.css') }}">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
+
 <body>
+   <header>
+     <div class ="heading" ></div>
+     <div class ="heading2" ></div>
+     <div class ="heading3" ></div>
+
+     <div class ="fb" ></div>
+     <div class ="img2" ></div>
+     <div class ="twit" ></div>
+
+     <div class ="in" ></div>
+     <div class ="youtube" ></div>
+     <div class ="border"></div>
+     <div class ="donate"></div>
+     <div class ="vol"></div>
+     <div class ="share"></div>
+     <p class= "donate"> </p
+
+    </header>
+
   <section class="container">
     <div class="row">
        <figure class="col-sm-12">
@@ -25,18 +56,19 @@
     <td>Jill</td>
     <td>Smith</td>
     <td>VITA</td>
-    <td> <button class="hide-button">Show Info</button> </td>
+    <td>  <p id= "Info">info</p> </td>
   </tr>
   <tr>
     <td>Eve</td>
     <td>Jackson</td>
     <td>Turkey Trot</td>
-    <td> <button class="hide-button">Show Info</button> </td>
+    <td>  <p id= "Info2">info</p> </td>
   </tr>
 </table>
          </div>
       <button class="hide-button"> Export to Spreadsheet </button>
-         <div class="row" id="info">
+         <div class="row" id = 'info'>
+           <div class= "con" style ="display:none">
            <!-- where to put info -->
            <p> Name: </p>
            <p> Address: </p>
@@ -49,6 +81,7 @@
            <p> Volunteering for: </p>
            <p> Other languages spoken: </p>
          </div>
+                                     </div>
        </figure>
       <figure class="col-sm-4" id="sort-box">
         <h3> Sort by: </h3>
@@ -92,8 +125,13 @@
         <div class=row>
           <p class="floaters">Languages</p>
           <select multiple class="floaters">
-          <option>English </option>
-	        <option>Spanish </option>
+          <option>Spanish </option>
+	        <option>French </option>
+	        <option>German </option>
+          <option>ASL</option>
+	        <option>Mandarin</option>
+	        <option>Hindi</option>
+	        <option>Arabic</option>
           </select>
         </div>
         <div class=row>
@@ -107,3 +145,7 @@
   </section>
 
 </body>
+    <script  src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>

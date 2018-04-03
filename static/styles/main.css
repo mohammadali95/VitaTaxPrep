@@ -18,6 +18,120 @@ td, th {
     padding: 8px;
 }
 
+.help {
+  margin-top: -90px;
+  margin-left: 900px;
+}
+
+
+.heading {
+
+  margin-top: 80px;
+  margin-left: 50px;
+  padding: 30px;
+    height: 20%;
+    width: 20%;
+  background-image: url("https://www.uwcark.org/sites/uwcark.org/files/Central%20Arkansas.png");
+  background-size: 100% 100% ;
+}
+.heading2 {
+  padding: 30px;
+    height: 130px;
+    width: 13%;
+  margin-top: -120px;
+  margin-left: 330px;
+
+
+  background-image: url("https://www.uwcark.org/sites/uwcark.org/files/live-united.png");
+  background-size: 100% 100% ;
+}
+
+.fb {
+  padding: 20px;
+  position: absolute;
+
+    left: 78%;
+     background-image: url("https://www.uwcark.org/sites/uwcark.org/files/facebook_1.png");
+  background-size: 100% 100% ;
+}
+
+.img2 {
+  padding: 20px;
+  position: absolute;
+  left: 81.5%;
+  background-image: url("https://www.uwcark.org/sites/uwcark.org/files/unnamed_1.png");
+  background-size: 100% 100% ;
+}
+
+.twit {
+  padding: 20px;
+  position: absolute;
+  left: 85%;
+  background-image: url("https://www.uwcark.org/sites/uwcark.org/files/twitter_2.png");
+  background-size: 100% 100% ;
+}
+
+.in {
+  padding: 20px;
+  position: absolute;
+  left: 88.5%;
+  background-image: url("https://www.uwcark.org/sites/uwcark.org/files/linked-in_1.png");
+  background-size: 100% 100% ;
+}
+
+.youtube {
+  padding: 20px;
+  position: absolute;
+  left: 92%;
+  background-image: url(https://www.uwcark.org/sites/uwcark.org/files/youtube_1.png);
+  background-size: 100% 100% ;
+}
+
+.border{
+    margin-top: 50px;
+    border-style: solid;
+    border-width: 20px;
+    border-color: #10167f;
+    border-width: 25px;
+}
+
+.donate{
+
+  border-radius: 0px 0px 10px 10px;
+    border-style: solid;
+    background-color: #10167f;
+    padding: 25px;
+    width: 120px;
+    position: absolute;
+    left: 65.5%;
+    top: -0.5%;
+}
+.vol{
+  border-radius: 0px 0px 10px 10px;
+    border-style: solid;
+    background-color: #F22F19;
+    color: #F22F19;
+    padding: 25px;
+    width: 120px;
+    position: absolute;
+    left: 75%;
+    top: -0.5%;
+}
+
+.share{
+  border-radius: 0px 0px 10px 10px;
+    border-style: solid;
+    background-color: #ff9600;
+    color: #ff9600;
+    padding: 25px;
+    width: 120px;
+    position: absolute;
+    left: 84.5%;
+    top: -0.5%;
+}
+
+
+
 tr:nth-child(even) {
     background-color: #dddddd;
 }
@@ -30,4 +144,9 @@ tr:nth-child(even) {
 
 #sort-box {
   border: 5px solid #dddddd;
+}
+
+.button-active{
+  color: #f7f9f9;
+  background-color: #00020f;
 }
