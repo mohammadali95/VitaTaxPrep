@@ -2,23 +2,14 @@
 <html lang="en" >
 
 <head>
-  <meta charset="UTF-8">
-  <title>VITA Search Volunteers</title>
-      <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
-</head>
-
-<body>
-
-  <html>
-<head>
   <meta charset="utf-8"/>
+  <title>VITA Search Volunteers</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" src="{{ url_for('static', filename='styles/main.css') }}">
+  <link rel="stylesheet" type="text/css" src="{{ url_for('static',filename='styles/main.css') }}">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
-
 <body>
-   <header>
+ <header>
      <div class ="heading" ></div>
      <div class ="heading2" ></div>
      <div class ="heading3" ></div>
@@ -36,14 +27,13 @@
      <p class= "donate"> </p
 
     </header>
-
   <section class="container">
     <div class="row">
        <figure class="col-sm-12">
          <h1> Search volunteers </h1>
        </figure>
     </div>
-       <figure class="col-sm-8">
+       <figure class="col-sm-9">
          <div class=row>
          <table style="width:100%">
   <tr class="table">
@@ -67,8 +57,8 @@
 </table>
          </div>
       <button class="hide-button"> Export to Spreadsheet </button>
-         <div class="row" id = 'info'>
-           <div class= "con" style ="display:none">
+         <div class="row" id="info">
+		 <div class= "con" style ="display:none">
            <!-- where to put info -->
            <p> Name: </p>
            <p> Address: </p>
@@ -81,50 +71,52 @@
            <p> Volunteering for: </p>
            <p> Other languages spoken: </p>
          </div>
-                                     </div>
+		  </div>
        </figure>
-      <figure class="col-sm-4" id="sort-box">
+      <figure class="col-sm-3" id="sort-box">
         <h3> Sort by: </h3>
         <div class=row>
-        <p class="floaters"> Event </p>
-        <select multiple class ="floaters" >
-          <option>Campaign Committee </option>
-	        <option>Jeans and Bling</option>
-	        <option>Turkey Trot</option>
-          <option>Stuff the Bus</option>
-	        <option>Agency Evaluation (Site Visit)</option>
-	        <option>VITA Free Tax Prep</option>
-	        <option>One of the Agencies</option>
-	        <option>Other</option>
+        <h4> Event </h4>
+          <form>
+        <input type = "checkbox" name="cc">
+          <label for "cc"> Campaign Committee </label> <br>
+             <input type = "checkbox" name="jandb">
+          <label for "jandb">Jeans and Bling</label> <br>
+             <input type = "checkbox" name="tt">
+          <label for "tt">Turkey Trot</label> <br>
+             <input type = "checkbox" name="stheb">
+          <label for "stheb">Stuff the Bus</label> <br>
+             <input type = "checkbox" name="ae">
+          <label for "ae">Agency Evaluation (Site Visit)</label> <br>
+             <input type = "checkbox" name="vftp">
+          <label for "vftp">VITA Free Tax Prep</label> <br>
+             <input type = "checkbox" name="ofta">
+          <label for "ofta">One of the Agencies</label> <br>
+             <input type = "checkbox" name="other">
+          <label for "other">Other</label> <br>
+          </form>
           </select>
         </div>
-        <div class=row>
-        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple events.</p>
+       <div class=row>
+          <h4> Times </h4>
+         <form>
+            <input type = "checkbox" name="9to10">
+          <label for "9to10">9:00-10:00</label> <br>
+            <input type = "checkbox" name="10to11">
+          <label for "10to11">10:00-11:00</label> <br>
+          <input type = "checkbox" name="11tonoon">
+          <label for "9to10">11:00-Noon</label> <br>
+          <input type = "checkbox" name="noonto1">
+          <label for "noonto1">Noon-1:00</label> <br> 
+          <input type = "checkbox" name="1to2">
+          <label for "1to2">1:00-2:00</label> <br>
+          <input type = "checkbox" name="2to3">
+          <label for "2to3">2:00-3:00</label> <br>
+         </form>
         </div>
         <div class=row>
-           <select multiple class ="floaters" >
-          <option>9:00 am </option>
-	        <option>10:00 am </option>
-	        <option>11:00 am </option>
-          <option>Noon</option>
-	        <option>1:00 pm</option>
-	        <option>2:00 pm</option>
-	        <option>3:00 pm</option>
-          </select>
-          <p class="floaters"> to </p>
-           <select multiple class ="floaters" >
-          <option>9:00 am </option>
-	        <option>10:00 am </option>
-	        <option>11:00 am </option>
-          <option>Noon</option>
-	        <option>1:00 pm</option>
-	        <option>2:00 pm</option>
-	        <option>3:00 pm</option>
-          </select>
-        </div>
-        <div class=row>
-          <p class="floaters">Languages</p>
-          <select multiple class="floaters">
+          <h4>Languages</h4>
+          <select>
           <option>Spanish </option>
 	        <option>French </option>
 	        <option>German </option>
@@ -135,7 +127,7 @@
           </select>
         </div>
         <div class=row>
-          <p class="floaters">Volunteer Name</p>
+          <h4>Volunteer Name</h4>
           <input type="text">
         </div>
         <div class=row>
@@ -145,7 +137,5 @@
   </section>
 
 </body>
-    <script  src="{{ url_for('static', filename='main.js') }}"></script>
-</body>
-
+<script  src="{{ url_for('static', filename='main.js') }}"></script>
 </html>
