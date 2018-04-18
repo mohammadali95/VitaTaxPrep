@@ -130,8 +130,6 @@ td, th {
     top: -0.5%;
 }
 
-
-
 tr:nth-child(even) {
     background-color: #dddddd;
 }
@@ -149,4 +147,8 @@ tr:nth-child(even) {
 .button-active{
   color: #f7f9f9;
   background-color: #00020f;
+}
+
+input[type=submit]:hover {
+  text-decoration: underline;
 }
