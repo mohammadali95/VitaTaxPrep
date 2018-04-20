@@ -46,46 +46,76 @@
       </div>
     </section>
     <section class="container">
-      <div id="popup" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h3>Event Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.<br></p>
-          <form action = "{{ url_for('new_volunteer') }}" method = "POST">
-            Name:<br>
-            <input type="text" name="name"><br>
-            Address:<br>
-            <input type="text" name="address"><br>
-            City:<br>
-            <input type="text" name="city"><br>
-            State:<br>
-            <input type="text" name="state"><br>
-            ZIP Code:<br>
-            <input type="text" name="zip"><br>
-            Email Address:<br>
-            <input type="text" name="email"><br>
-            Phone Number:<br>
-            <input type="text" name="phone"><br>
-            Date of Birth:<br>
-            <input type="date" name="date"><br />
-            <!-- This would probably be better as a dropdown. -->
-            Volunteering for:<br>
-            <select name="event">
-              <option value="Jeans and Bling">Jeans and Bling</option>
-              <option value="Stuff the Bus">Stuff the Bus</option>
-              <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
-              <option value="CEO Luncheon">CEO Luncheon</option>
-              <option value="TurkeyTrot">TurkeyTrot</option>
-              <option value="Free Tax Preparation">Free Tax Preparation</option>
-            </select>
-            <br />
-            <!-- This would probably be better as radio buttons. -->
-            Languages Spoken:<br>
-            <input type="checkbox" name="language" value="English">English<br>
-            <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
-            <input type="submit" value="Submit">
-        </div>
-      </div>
+      <figure class="col-sm-6">
+        <div id="popup" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Event Name</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.<br></p>
+            <form action = "{{ url_for('new_volunteer') }}" method = "POST">
+              <div class="row">
+                <figure class="col-sm-4">
+                  Name:<br>
+                  <input type="text" name="name"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  Address:<br>
+                  <input type="text" name="address"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  City:<br>
+                  <input type="text" name="city"><br>
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-4">
+                  State:<br>
+                  <input type="text" name="state"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  ZIP Code:<br>
+                  <input type="text" name="zip"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  Email Address:<br>
+                  <input type="text" name="email"><br>
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-4">
+                  Phone Number:<br>
+                  <input type="text" name="phone"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  Date of Birth:<br>
+                  <input type="date" name="date"><br />
+                </figure>
+              <!-- This would probably be better as a dropdown. -->
+                <figure class="col-sm-4">
+                  Volunteering for:<br>
+                  <select name="event">
+                    <option value="Jeans and Bling">Jeans and Bling</option>
+                    <option value="Stuff the Bus">Stuff the Bus</option>
+                    <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
+                    <option value="CEO Luncheon">CEO Luncheon</option>
+                    <option value="TurkeyTrot">TurkeyTrot</option>
+                    <option value="Free Tax Preparation">Free Tax Preparation</option>
+                  </select>
+                  <br />
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-12">
+              <!-- This would probably be better as radio buttons. -->
+                  Languages Spoken:<br>
+                  <input type="checkbox" name="language" value="English">English<br>
+                  <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
+                  <input type="submit" value="Submit">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </figure>
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='events.js') }}"></script>
