@@ -18,6 +18,14 @@ def adminPage():
         return render_template('admin.html', data = data)
     else:
         events = []
+        name = request.form['VolName']
+        if name != "":
+            string = str(buildNameQuery(name))
+            print(string)
+            print(c.execute(string))
+            c.execute(string)
+            data = c.fetchall()
+            return render_template('admin.html', data=data)
         for event in eventsIn:
             if request.form.get(event, False) == 'on':
                 events.append(event)
@@ -29,6 +37,10 @@ def adminPage():
         c.execute(string)
         data = c.fetchall()
         return render_template('admin.html', data=data)
+
+def buildNameQuery(name):
+    execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
+    return execute
 
 def buildEventsQuery(events):
     print(events)

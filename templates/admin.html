@@ -80,7 +80,7 @@
            <p> Other languages spoken: </p>
         </div>
         <div class="col-sm-4" id="button-box">
-           <button> Edit Information </button> 
+           <button> Edit Information </button>
            <br></br>
            <button id="delete"> Delete Volunteer </button>
         <div class="col-sm-12" id="delete-box">
@@ -151,7 +151,11 @@
         </div>
         <div class=row>
           <h4>Volunteer Name</h4>
-          <input type="text">
+          <form method="POST">
+            <input name="VolName" />
+            <input type="submit" />
+          </form>
+
         </div>
         <div class=row>
           <button type="submit"> Sort </button>
