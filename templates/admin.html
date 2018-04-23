@@ -43,9 +43,10 @@
        </figure>
     </div>
        <figure class="col-sm-9">
-         <div class=row>
-         <table style="width:100%">
-  <tr class="table">
+        <div id="tableContainer" class="tableContainer">
+<table class="scrollTable" id="admin-table">
+<thead class="fixedHeader">
+  <tr>
     <th>Name</th>
     <th>Event</th>
     <th>Phone</th>
@@ -61,9 +62,11 @@
   {% endfor %}
 </table>
          </div>
-      <button class="hide-button"> Export to Spreadsheet </button>
-         <div class="row" id="info">
-		 <div class= "con" style ="display:none">
+       <div class="row">
+      <button id="export"> Export to Spreadsheet </button>
+    </div>
+      <figure class="col-sm-12" id="info">
+         <div class="col-sm-8">
            <!-- where to put info -->
            <p> Name: </p>
            <p> Address: </p>
@@ -75,9 +78,23 @@
            <p> Date of Birth: </p>
            <p> Volunteering for: </p>
            <p> Other languages spoken: </p>
-         </div>
+        </div>
+        <div class="col-sm-4" id="button-box">
+           <button> Edit Information </button> 
+           <br></br>
+           <button id="delete"> Delete Volunteer </button>
+        <div class="col-sm-12" id="delete-box">
+          <p>Are you sure you want to delete?</p>
+            <button id="delete-yes"> Yes </button>
+          <br></br>
+           <button id="delete-no"> No  </button>
+
+        </div>
+        </div>
+
 		  </div>
-       </figure>
+    </figure>
+	</figure>
       <figure class="col-sm-3" id="sort-box">
         <h3> Sort by: </h3>
         <div class=row>

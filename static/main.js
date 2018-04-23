@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#Info").mouseenter(function(){
+    /*$("#Info").mouseenter(function(){
         $(".con").show();
         $("#Info").addClass('button-active');
     });
@@ -17,5 +17,17 @@ $(document).ready(function(){
   $(".con").mouseleave(function(){
         $(".con").hide();
      $("#Info2").removeClass('button-active')
-    });
+    });*/
+	 $('#info').hide();
+  
+ $('.hide-button').on('click', () => {
+    $('#info').show();
+ })
+   $('#delete-box').hide();
+ $('#delete').on('click', () => {
+    $('#delete-box').show();
+ })
+  $('#delete-no').on('click', () => {
+     $('#delete-box').hide();
+  })
 });
