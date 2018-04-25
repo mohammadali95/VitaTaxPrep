@@ -6,58 +6,137 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"><br><br>
   </head>
   <body>
-	<section id="uw-image" class="container">
+    <section id="uw-image" class="container">
       <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/><br><br>
-	</section>
-	{% for event in events %}
-		<figure class='col-sm-6' style="text-align: center;">
-			<h2>{{ event[0] }}</h2>
-			<img src="{{event[1]}}" style="width:455px;height:256px" onclick="popup( {{event[0]}} , {{event[1]}} )" />
-		</figure>
-	{% else %}
-		<em>No events found.</em>
-	{% endfor %}
-	<section class="container">
-      <div id="popup" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h3 id=eventName></h3>
-          <p id=description><br></p>
-          <form action = "{{ url_for('new_volunteer') }}" method = "POST">
-            Name:<br>
-            <input type="text" name="name"><br>
-            Address:<br>
-            <input type="text" name="address"><br>
-            City:<br>
-            <input type="text" name="city"><br>
-            State:<br>
-            <input type="text" name="state"><br>
-            ZIP Code:<br>
-            <input type="text" name="zip"><br>
-            Email Address:<br>
-            <input type="text" name="email"><br>
-            Phone Number:<br>
-            <input type="text" name="phone"><br>
-            Date of Birth:<br>
-            <input type="date" name="date"><br />
-            <!-- This would probably be better as a dropdown. -->
-            Volunteering for:<br>
-            <select name="event">
-              <option value="Jeans and Bling">Jeans and Bling</option>
-              <option value="Stuff the Bus">Stuff the Bus</option>
-              <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
-              <option value="CEO Luncheon">CEO Luncheon</option>
-              <option value="TurkeyTrot">TurkeyTrot</option>
-              <option value="Free Tax Preparation">Free Tax Preparation</option>
-            </select>
-            <br />
-            <!-- This would probably be better as radio buttons. -->
-            Languages Spoken:<br>
-            <input type="checkbox" name="language" value="English">English<br>
-            <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
-            <input type="submit" value="Submit">
-        </div>
+    </section>
+    <section class='container'>
+      <div class='row' style="text-align: center;">
+        <figure class='col-sm-6'>
+          <h2>Jeans and Bling</h2>
+          <img class="event-img" src="https://www.uwcark.org/sites/uwcark.org/files/Bourbon%2C%20Boots%20%26%20Brews%20%285%29.jpg" style="width:455px;height:256px"/><br><br>
+        </figure>
+        <figure class='col-sm-6'>
+          <h2>Stuff the Bus</h2>
+          <img class="event-img" src="https://www.uwcark.org/sites/uwcark.org/files/Wood-Buffalo-Food-Bank-Association-Stuff-the-Bus-Logo-Nov-1-2013.png" style="width:455px;height:256px"/><br><br>
+        </figure>
       </div>
+    </section>
+    <section class='container'>
+      <div class='row' style="text-align: center;">
+        <figure class='col-sm-6'>
+          <h2>Campaign Coordinator Bootcamp</h2>
+          <img class="event-img" src="https://www.uwcark.org/sites/uwcark.org/files/resizedimage250106-bootcamp.png" style="width:455px;height:256px"/><br><br>
+        </figure>
+        <figure class='col-sm-6'>
+          <h2>Free Tax Preparation</h2>
+          <img class="event-img" src="https://www.uwcark.org/sites/uwcark.org/files/Picture1_1.png" style="width:455px;height:256px"/><br><br>
+        </figure>
+      </div>
+    </section>
+    <section class='container'>
+      <div class='row' style="text-align: center;">
+        <figure class='col-sm-6'>
+          <h2>Pillar Party</h2>
+          <img class="event-img" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/><br><br>
+        </figure>
+        <figure class='col-sm-6'>
+          <h2>Turkey Trot</h2>
+          <img class="event-img" src="https://www.uwcark.org/sites/uwcark.org/files/Publication7_0.jpg" style="width:455px;height:256px"/><br><br>
+        </figure>
+      </div>
+    </section>
+    <section class="container">
+      <figure class="col-sm-6">
+        <div id="popup" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Event Name</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.<br></p>
+            <form action = "{{ url_for('new_volunteer') }}" method = "POST">
+              <div class="row">
+                <figure class="col-sm-4">
+                  Name:<br>
+                  <input type="text" name="name"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  Address:<br>
+                  <input type="text" name="address"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  City:<br>
+                  <input type="text" name="city"><br>
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-4">
+                  State:<br>
+                  <input type="text" name="state"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  ZIP Code:<br>
+                  <input type="text" name="zip"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  Email Address:<br>
+                  <input type="text" name="email"><br>
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-4">
+                  Phone Number:<br>
+                  <input type="text" name="phone"><br>
+                </figure>
+                <figure class="col-sm-4">
+                  Date of Birth:<br>
+                  <input type="date" name="date"><br />
+                </figure>
+              <!-- This would probably be better as a dropdown. -->
+                <figure class="col-sm-4">
+                  Volunteering for:<br>
+                  <select name="event">
+                    <option value="Jeans and Bling">Jeans and Bling</option>
+                    <option value="Stuff the Bus">Stuff the Bus</option>
+                    <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
+                    <option value="CEO Luncheon">CEO Luncheon</option>
+                    <option value="TurkeyTrot">TurkeyTrot</option>
+                    <option value="Free Tax Preparation">Free Tax Preparation</option>
+                  </select>
+                  <br />
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-6" id="hours">
+                  <p> Hours </p>
+                  <form>
+                    <input type = "checkbox" name="9to10">
+                    <label for "9to10">9:00-10:00</label> <br>
+                    <input type = "checkbox" name="10to11">
+                    <label for "10to11">10:00-11:00</label> <br>
+                    <input type = "checkbox" name="11tonoon">
+                    <label for "9to10">11:00-Noon</label> <br>
+                    <input type = "checkbox" name="noonto1">
+                    <label for "noonto1">Noon-1:00</label> <br>
+                    <input type = "checkbox" name="1to2">
+                    <label for "1to2">1:00-2:00</label> <br>
+                    <input type = "checkbox" name="2to3">
+                    <label for "2to3">2:00-3:00</label> <br>
+                  </form>
+                </figure>
+                <figure class="col-sm-6" id="langs">
+              <!-- This would probably be better as radio buttons. -->
+                  Languages Spoken:<br>
+                  <input type="checkbox" name="language" value="English">English<br>
+                  <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
+                </figure>
+              </div>
+              <div class="row">
+                <figure class="col-sm-12">
+                  <input type="submit" value="Submit">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </figure>
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='events.js') }}"></script>
