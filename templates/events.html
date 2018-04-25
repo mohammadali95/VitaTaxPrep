@@ -7,12 +7,12 @@
   </head>
   <body>
 	<section id="uw-image" class="container">
-      <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/><br><br>
+      <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/>
 	</section>
 	{% for event in events %}
 		<figure class='col-sm-6' style="text-align: center;">
 			<h2>{{ event[0] }}</h2>
-			<img src="{{event[1]}}" style="width:455px;height:256px" onclick="popup( {{event[0]}} , {{event[1]}} )" />
+			<img src="{{event[1]}}" class="event-img" style="width:455px;height:256px" onclick="popup( {{event[0]}} , {{event[1]}} )" />
 		</figure>
 	{% else %}
 		<em>No events found.</em>
@@ -24,38 +24,80 @@
           <h3 id=eventName></h3>
           <p id=description><br></p>
           <form action = "{{ url_for('new_volunteer') }}" method = "POST">
-            Name:<br>
-            <input type="text" name="name"><br>
-            Address:<br>
-            <input type="text" name="address"><br>
-            City:<br>
-            <input type="text" name="city"><br>
-            State:<br>
-            <input type="text" name="state"><br>
-            ZIP Code:<br>
-            <input type="text" name="zip"><br>
-            Email Address:<br>
-            <input type="text" name="email"><br>
-            Phone Number:<br>
-            <input type="text" name="phone"><br>
-            Date of Birth:<br>
-            <input type="date" name="date"><br />
-            <!-- This would probably be better as a dropdown. -->
-            Volunteering for:<br>
-            <select name="event">
-              <option value="Jeans and Bling">Jeans and Bling</option>
-              <option value="Stuff the Bus">Stuff the Bus</option>
-              <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
-              <option value="CEO Luncheon">CEO Luncheon</option>
-              <option value="TurkeyTrot">TurkeyTrot</option>
-              <option value="Free Tax Preparation">Free Tax Preparation</option>
-            </select>
-            <br />
-            <!-- This would probably be better as radio buttons. -->
-            Languages Spoken:<br>
-            <input type="checkbox" name="language" value="English">English<br>
-            <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
-            <input type="submit" value="Submit">
+            <div class="row">
+              <figure class="col-sm-4">
+                Name<br>
+                <input type="text" name="name">
+              </figure>
+              <figure class="col-sm-4">
+                Address<br>
+                <input type="text" name="address">
+              </figure>
+              <figure class="col-sm-4">
+                City<br>
+                <input type="text" name="city">
+              </figure>
+            </div>
+            <div class="row">
+              <figure class="col-sm-4">
+                State<br>
+                <input type="text" name="state">
+              </figure>
+              <figure class="col-sm-4">
+                ZIP Code<br>
+                <input type="text" name="zip">
+              </figure>
+              <figure class="col-sm-4">
+                Email Address<br>
+                <input type="text" name="email">
+              </figure>
+            </div>
+            <div class="row">
+              <figure class="col-sm-4">
+                Phone Number<br>
+                <input type="text" name="phone">
+              </figure>
+              <figure class="col-sm-4">
+                Date of Birth<br>
+                <input type="date" name="date">
+              </figure>
+              <figure class="col-sm-4">
+                Volunteering for<br>
+                <select name="event">
+                  <option value="Jeans and Bling">Jeans and Bling</option>
+                  <option value="Stuff the Bus">Stuff the Bus</option>
+                  <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
+                  <option value="CEO Luncheon">CEO Luncheon</option>
+                  <option value="TurkeyTrot">TurkeyTrot</option>
+                  <option value="Free Tax Preparation">Free Tax Preparation</option>
+                </select>
+              </figure>
+            </div>
+            <div class="row">
+              <figure class="col-sm-6">
+                <form>
+                  <input type = "checkbox" name="9to10">
+                  <label for "9to10">9:00-10:00</label> <br>
+                  <input type = "checkbox" name="10to11">
+                  <label for "10to11">10:00-11:00</label> <br>
+                  <input type = "checkbox" name="11tonoon">
+                  <label for "9to10">11:00-Noon</label> <br>
+                  <input type = "checkbox" name="noonto1">
+                  <label for "noonto1">Noon-1:00</label> <br>
+                  <input type = "checkbox" name="1to2">
+                  <label for "1to2">1:00-2:00</label> <br>
+                  <input type = "checkbox" name="2to3">
+                  <label for "2to3">2:00-3:00</label> <br>
+                </form>
+              </figure>
+              <figure class="col-sm-6">
+                Languages Spoken<br>
+                <input type="checkbox" name="language" value="English">English<br>
+                <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
+                <input type="submit" value="Submit">
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>
