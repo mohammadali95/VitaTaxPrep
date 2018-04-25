@@ -1,65 +1,20 @@
 import sqlite3
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
-
-eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation'}
 
 @app.route('/events')
 def eventsPage():
-    return render_template('events.html')
+	with sqlite3.connect("VITA.db") as con:
+		cur = con.cursor()
+		cur.execute("SELECT name, image FROM events")
+		events = cur.fetchall()
+		return render_template('events.html', events=events)
 
-@app.route('/admin', methods = ['POST', 'GET'])
+@app.route('/admin')
 def adminPage():
-    con = sqlite3.connect('VITA.db')
-    c = con.cursor()
-    if request.method == 'GET':
-        c.execute('SELECT * FROM volunteers')
-        data = c.fetchall()
-        return render_template('admin.html', data = data)
-    else:
-        events = []
-        name = request.form['VolName']
-        if name != "":
-            string = str(buildNameQuery(name))
-            print(string)
-            print(c.execute(string))
-            c.execute(string)
-            data = c.fetchall()
-            return render_template('admin.html', data=data)
-        for event in eventsIn:
-            if request.form.get(event, False) == 'on':
-                events.append(event)
-        string = buildEventsQuery(events)
-        if string == "SELECT * FROM volunteers WHERE event = ":
-            c.execute("SELECT * FROM volunteers WHERE event = Null")
-            data = c.fetchall()
-            return render_template('admin.html', data=data)
-        c.execute(string)
-        data = c.fetchall()
-        return render_template('admin.html', data=data)
-
-def buildNameQuery(name):
-    execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
-    return execute
-
-def buildEventsQuery(events):
-    print(events)
-    execute = 'SELECT * FROM volunteers WHERE event = '
-    if len(events) > 1:
-        for i in events:
-            if i == events[-1]:
-                execute += "'" + eventsIn[i] + "'"
-            else:
-                execute += "'" + eventsIn[i] + "'" + ' OR event = '
-        print(execute)
-        return execute
-    else:
-        for i in events:
-            execute +=  "'" + eventsIn[i] + "'"
-        print(execute)
-        return execute
-
-@app.route('/new_volunteer', methods = ['POST', 'GET'])
+    return render_template('admin.html')
+	
+@app.route('/new_volunteer',methods = ['POST', 'GET'])
 def new_volunteer():
    if request.method == 'POST':
       try:
