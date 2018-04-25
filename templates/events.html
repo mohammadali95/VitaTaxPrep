@@ -10,7 +10,7 @@
       <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/>
 	</section>
 	{% for event in events %}
-		<figure class='col-sm-6' style="text-align: center;">
+		<figure class='col-sm-6 text-center'>
 			<h2>{{ event[0] }}</h2>
 			<img src="{{event[1]}}" class="event-img" style="width:455px;height:256px" onclick="popup( {{event[0]}} , {{event[1]}} )" />
 		</figure>
@@ -26,43 +26,52 @@
           <form action = "{{ url_for('new_volunteer') }}" method = "POST">
             <div class="row">
               <figure class="col-sm-4">
-                Name<br>
+                <font size="4"> Name </font>
+                <br>
                 <input type="text" name="name">
               </figure>
               <figure class="col-sm-4">
-                Address<br>
+                <font size="4"> Address </font>
+                <br>
                 <input type="text" name="address">
               </figure>
               <figure class="col-sm-4">
-                City<br>
+                <font size="4"> City </font>
+                <br>
                 <input type="text" name="city">
               </figure>
             </div>
             <div class="row">
               <figure class="col-sm-4">
-                State<br>
+                <font size="4"> State </font>
+                <br>
                 <input type="text" name="state">
               </figure>
               <figure class="col-sm-4">
-                ZIP Code<br>
+                <font size="4"> ZIP Code </font>
+                <br>
                 <input type="text" name="zip">
               </figure>
               <figure class="col-sm-4">
-                Email Address<br>
+                <font size="4"> Email Address </font>
+                <br>
                 <input type="text" name="email">
               </figure>
             </div>
             <div class="row">
               <figure class="col-sm-4">
-                Phone Number<br>
+                <font size="4"> Phone Number </font>
+                <br>
                 <input type="text" name="phone">
               </figure>
               <figure class="col-sm-4">
-                Date of Birth<br>
+                <font size="4"> Date of Birth </font>
+                <br>
                 <input type="date" name="date">
               </figure>
               <figure class="col-sm-4">
-                Volunteering for<br>
+                <font size="4"> Volunteering For </font>
+                <br>
                 <select name="event">
                   <option value="Jeans and Bling">Jeans and Bling</option>
                   <option value="Stuff the Bus">Stuff the Bus</option>
@@ -74,28 +83,33 @@
               </figure>
             </div>
             <div class="row">
-              <figure class="col-sm-6">
+              <figure class="col-sm-6 text-left" id="hours">
+                <font size="4"> Hours </font>
+                <br>
                 <form>
-                  <input type = "checkbox" name="9to10">
+                  <input type="checkbox" name="9to10">
                   <label for "9to10">9:00-10:00</label> <br>
-                  <input type = "checkbox" name="10to11">
+                  <input type="checkbox" name="10to11">
                   <label for "10to11">10:00-11:00</label> <br>
-                  <input type = "checkbox" name="11tonoon">
+                  <input type="checkbox" name="11tonoon">
                   <label for "9to10">11:00-Noon</label> <br>
-                  <input type = "checkbox" name="noonto1">
+                  <input type="checkbox" name="noonto1">
                   <label for "noonto1">Noon-1:00</label> <br>
-                  <input type = "checkbox" name="1to2">
+                  <input type="checkbox" name="1to2">
                   <label for "1to2">1:00-2:00</label> <br>
-                  <input type = "checkbox" name="2to3">
+                  <input type="checkbox" name="2to3">
                   <label for "2to3">2:00-3:00</label> <br>
                 </form>
               </figure>
-              <figure class="col-sm-6">
-                Languages Spoken<br>
+              <figure class="col-sm-6 text-left" id="lang">
+                <font size="4"> Languages Spoken </font>
+                <br>
                 <input type="checkbox" name="language" value="English">English<br>
                 <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
-                <input type="submit" value="Submit">
               </figure>
+            </div>
+            <div class="row">
+              <input type="submit" value="Submit">
             </div>
           </div>
         </div>
