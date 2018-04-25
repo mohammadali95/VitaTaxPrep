@@ -55,44 +55,44 @@
             <form action = "{{ url_for('new_volunteer') }}" method = "POST">
               <div class="row">
                 <figure class="col-sm-4">
-                  Name:<br>
+                  <font size="4">Name</font><br>
                   <input type="text" name="name">
                 </figure>
                 <figure class="col-sm-4">
-                  Address:<br>
+                  <font size="4">Address</font><br>
                   <input type="text" name="address"><br>
                 </figure>
                 <figure class="col-sm-4">
-                  City:<br>
+                  <font size="4">City</font><br>
                   <input type="text" name="city"><br>
                 </figure>
               </div>
               <div class="row">
                 <figure class="col-sm-4">
-                  State:<br>
+                  <font size="4">State</font><br>
                   <input type="text" name="state"><br>
                 </figure>
                 <figure class="col-sm-4">
-                  ZIP Code:<br>
+                  <font size="4">ZIP Code</font><br>
                   <input type="text" name="zip"><br>
                 </figure>
                 <figure class="col-sm-4">
-                  Email Address:<br>
+                  <font size="4">Email Address</font><br>
                   <input type="text" name="email"><br>
                 </figure>
               </div>
               <div class="row">
                 <figure class="col-sm-4">
-                  Phone Number:<br>
+                  <font size="4">Phone Number</font><br>
                   <input type="text" name="phone"><br>
                 </figure>
                 <figure class="col-sm-4">
-                  Date of Birth:<br>
-                  <input type="date" name="date"><br />
+                  <font size="4">Date of Birth</font><br>
+                  <input type="date" name="date"><br/>
                 </figure>
               <!-- This would probably be better as a dropdown. -->
                 <figure class="col-sm-4">
-                  Volunteering for:<br>
+                  <font size="4">Volunteering For</font><br>
                   <select name="event">
                     <option value="Jeans and Bling">Jeans and Bling</option>
                     <option value="Stuff the Bus">Stuff the Bus</option>
@@ -101,12 +101,12 @@
                     <option value="TurkeyTrot">TurkeyTrot</option>
                     <option value="Free Tax Preparation">Free Tax Preparation</option>
                   </select>
-                  <br />
+                  <br/>
                 </figure>
               </div>
               <div class="row">
                 <figure class="col-sm-6" id="hours">
-                  <p> Hours </p>
+                  <p> <font size="4"> Hours </font> </p>
                   <form>
                     <input type = "checkbox" name="9to10">
                     <label for "9to10">9:00-10:00</label> <br>
@@ -124,7 +124,7 @@
                 </figure>
                 <figure class="col-sm-6" id="langs">
               <!-- This would probably be better as radio buttons. -->
-                  Languages Spoken:<br>
+                  <font size="4">Languages Spoken</font><br>
                   <input type="checkbox" name="language" value="English">English<br>
                   <input type="checkbox" name="language" value="Spanish">Spanish<br><br />
                 </figure>
