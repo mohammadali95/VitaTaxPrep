@@ -1,15 +1,19 @@
 import sqlite3
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 @app.route('/events')
 def eventsPage():
-    return render_template('events.html')
+	with sqlite3.connect("VITA.db") as con:
+		cur = con.cursor()
+		cur.execute("SELECT name, image FROM events")
+		events = cur.fetchall()
+		return render_template('events.html', events=events)
 
 @app.route('/admin')
 def adminPage():
     return render_template('admin.html')
-
+	
 @app.route('/new_volunteer',methods = ['POST', 'GET'])
 def new_volunteer():
    if request.method == 'POST':

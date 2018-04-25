@@ -6,71 +6,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"><br><br>
   </head>
   <body>
-    <section id="uw-image" class="container">
+	<section id="uw-image" class="container">
       <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/><br><br>
-    </section>
-    <section class='container'>
-      <div class='row' style="text-align: center;">
-        <figure class='col-sm-6'>
-          <h2>Jeans and Bling</h2>
-          <img id="jeans" src="https://www.uwcark.org/sites/uwcark.org/files/Bourbon%2C%20Boots%20%26%20Brews%20%285%29.jpg" style="width:455px;height:256px"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-        <figure class='col-sm-6'>
-          <h2>Stuff the Bus</h2>
-          <img id="bus" src="https://www.uwcark.org/sites/uwcark.org/files/Wood-Buffalo-Food-Bank-Association-Stuff-the-Bus-Logo-Nov-1-2013.png" style="width:455px;height:256px"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-      </div>
-    </section>
-    <section class='container'>
-      <div class='row' style="text-align: center;">
-        <figure class='col-sm-6'>
-          <h2>Campaign Coordinator Bootcamp</h2>
-          <img id="bootcamp" src="https://www.uwcark.org/sites/uwcark.org/files/resizedimage250106-bootcamp.png" style="width:455px;height:256px"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-        <figure class='col-sm-6'>
-          <h2>CEO Luncheon</h2>
-          <img id="lunch" src="https://www.uwcark.org/sites/uwcark.org/files/live-united-footer.png" style="width:455px;height:256px"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-      </div>
-    </section>
-    <section class='container'>
-      <div class='row' style="text-align: center;">
-        <figure class='col-sm-6'>
-          <h2>Pillar Party</h2>
-          <img id="pillar" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-        <figure class='col-sm-6'>
-          <h2>Turkey Trot</h2>
-          <img id="turkey" src="https://www.uwcark.org/sites/uwcark.org/files/Publication7_0.jpg" style="width:455px;height:256px"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-      </div>
-    </section>
-    <section class='container'>
-      <div class='row' style="text-align: center;">
-        <figure class='col-sm-6'>
-          <h2>Free Tax Preparation</h2>
-          <img id="tax" src="https://www.uwcark.org/sites/uwcark.org/files/Picture1_1.png" style="width:455px;height:256px"/><br><br>
-          <button class="details-btn">More Details</button>
-        </figure>
-        <figure class='col-sm-6'>
-          <h2>#GiveUnitedAR</h2>
-          <img id="give" src="https://free-images.com/sm/f72e/bus_school_school_bus_0.jpg"/><br><br />
-          <button class="details-btn">More Details</button>
-        </figure>
-      </div>
-    </section>
-    <section class="container">
+	</section>
+	{% for event in events %}
+		<figure class='col-sm-6' style="text-align: center;">
+			<h2>{{ event[0] }}</h2>
+			<img src="{{event[1]}}" style="width:455px;height:256px" onclick="popup( {{event[0]}} , {{event[1]}} )" />
+		</figure>
+	{% else %}
+		<em>No events found.</em>
+	{% endfor %}
+	<section class="container">
       <div id="popup" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <h3>Event Name</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna lacus, molestie non auctor vel, porttitor ut metus. Mauris at velit accumsan, placerat nisi sed, congue sem. Maecenas porttitor, urna et volutpat dapibus, ex magna pellentesque purus, in finibus enim nunc et nulla. Etiam vel ipsum sem. Etiam consequat, ligula in consequat viverra, leo magna sollicitudin lacus, quis ullamcorper ante est sit amet dolor. Maecenas leo tortor, porta molestie erat vitae, mollis imperdiet dolor. Mauris id consequat nulla, volutpat scelerisque nisl. Sed a orci ut enim malesuada pretium.<br></p>
+          <h3 id=eventName></h3>
+          <p id=description><br></p>
           <form action = "{{ url_for('new_volunteer') }}" method = "POST">
             Name:<br>
             <input type="text" name="name"><br>
