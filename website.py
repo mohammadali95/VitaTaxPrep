@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation'}
+hoursIn = {'9to10':'9to10', '10to11':'10to11', '11tonoon':'11tonoon', 'noonto1':'noonto1', '1to2':'1to2', '2to3':'2to3'}
 
 @app.route('/events')
 def eventsPage():
@@ -72,12 +73,17 @@ def new_volunteer():
          phone = request.form['phone']
          dob = request.form['date']
          event = request.form['event']
+         timeList = []
+         for time in hoursIn:
+             if request.form.get(time, False) == 'on':
+                 timeList.append(time)
+         print(timeList)
          language = 'English'
-         print(name, address, city, state, zipcode, email, dob, event, language)
 
          with sqlite3.connect("/Users/michaelspainhour/Documents/workspace/VitaTaxPrep/VITA.db") as con:
              cur = con.cursor()
-             cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,language) )
+             print("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,timeList,language) )
+             cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,str(timeList),language) )
              con.commit()
              msg = "Record successfully added"
       except:
