@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>VITA Search Volunteers</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
 
+<body>
+
+  <html>
+<head>
 <head>
   <meta charset="utf-8"/>
   <title>VITA Search Volunteers</title>
@@ -34,31 +43,30 @@
        </figure>
     </div>
        <figure class="col-sm-9">
-         <div class=row>
-         <table style="width:100%">
-  <tr class="table">
-    <th>Firstname</th>
-    <th>Lastname</th>
+        <div id="tableContainer" class="tableContainer">
+<table class="scrollTable" id="admin-table">
+<thead class="fixedHeader">
+  <tr>
+    <th>Name</th>
     <th>Event</th>
-    <th>Info </th>
+    <th>Phone</th>
+    <th>Info</th>
   </tr>
+  {% for item in data %}
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>VITA</td>
-    <td>  <p id= "Info">info</p> </td>
+    <td>{{item[0]}}</td>
+    <td>{{item[8]}}</td>
+    <td>{{item[6]}}</td>
+    <td>  <input id="button" type="submit" name="submit" value="info"> </td>
   </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>Turkey Trot</td>
-    <td>  <p id= "Info2">info</p> </td>
-  </tr>
+  {% endfor %}
 </table>
          </div>
-      <button class="hide-button"> Export to Spreadsheet </button>
-         <div class="row" id="info">
-		 <div class= "con" style ="display:none">
+       <div class="row">
+      <button id="export"> Export to Spreadsheet </button>
+    </div>
+      <figure class="col-sm-12" id="info">
+         <div class="col-sm-8">
            <!-- where to put info -->
            <p> Name: </p>
            <p> Address: </p>
@@ -70,14 +78,28 @@
            <p> Date of Birth: </p>
            <p> Volunteering for: </p>
            <p> Other languages spoken: </p>
-         </div>
+        </div>
+        <div class="col-sm-4" id="button-box">
+           <button> Edit Information </button>
+           <br></br>
+           <button id="delete"> Delete Volunteer </button>
+        <div class="col-sm-12" id="delete-box">
+          <p>Are you sure you want to delete?</p>
+            <button id="delete-yes"> Yes </button>
+          <br></br>
+           <button id="delete-no"> No  </button>
+
+        </div>
+        </div>
+
 		  </div>
-       </figure>
+    </figure>
+	</figure>
       <figure class="col-sm-3" id="sort-box">
         <h3> Sort by: </h3>
         <div class=row>
         <h4> Event </h4>
-          <form>
+          <form action= "{{ url_for('adminPage') }}" method="POST" class="adminPage" name=eventForm>
         <input type = "checkbox" name="cc">
           <label for "cc"> Campaign Committee </label> <br>
              <input type = "checkbox" name="jandb">
@@ -94,6 +116,7 @@
           <label for "ofta">One of the Agencies</label> <br>
              <input type = "checkbox" name="other">
           <label for "other">Other</label> <br>
+          <button type="submit"> Sort </button>
           </form>
           </select>
         </div>
@@ -107,7 +130,7 @@
           <input type = "checkbox" name="11tonoon">
           <label for "9to10">11:00-Noon</label> <br>
           <input type = "checkbox" name="noonto1">
-          <label for "noonto1">Noon-1:00</label> <br> 
+          <label for "noonto1">Noon-1:00</label> <br>
           <input type = "checkbox" name="1to2">
           <label for "1to2">1:00-2:00</label> <br>
           <input type = "checkbox" name="2to3">
@@ -128,10 +151,14 @@
         </div>
         <div class=row>
           <h4>Volunteer Name</h4>
-          <input type="text">
+          <form method="POST">
+            <input name="VolName" />
+            <input type="submit" />
+          </form>
+
         </div>
         <div class=row>
-          <button type="button"> Sort </button>
+          <button type="submit"> Sort </button>
 
       </figure>
   </section>

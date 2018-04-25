@@ -1,5 +1,6 @@
 $(document).ready(() => {
-  $(".details-btn").on("click", () => {
+
+  $(".event-img").on("click", () => {
     $("#popup").css("display", "block")
   })
   
