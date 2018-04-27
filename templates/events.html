@@ -12,7 +12,7 @@
 	{% for event in events %}
 		<figure class='col-sm-6 text-center'>
 			<h2>{{ event[0] }}</h2>
-			<img src="{{event[1]}}" class="event-img" style="width:455px;height:256px" onclick="popup( {{event[0]}} , {{event[1]}} )" />
+			<img src="{{event[1]}}" class="event-img" style="width:455px;height:256px" onclick="popup( '{{event[0]}}' , '{{event[2]}}' )" />
 		</figure>
 	{% else %}
 		<em>No events found.</em>

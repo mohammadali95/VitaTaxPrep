@@ -1,14 +1,4 @@
-$(document).ready(() => {
-
-  $(".event-img").on("click", () => {
-    $("#popup").css("display", "block")
-  })
-  
-  function popup(name, description) {
-	  $("#eventName").textContent = name
-	  $("#description").textContent = description
-	  $("#popup").css("display", "block")
-  }
+$(document).ready(() => {  
 
   $(".close").on("click", () => {
     $(".modal").css("display", "none")
@@ -19,3 +9,9 @@ $(document).ready(() => {
   })
 
 })
+
+function popup(name, description) {
+	$("#eventName").html(name)
+	$("#description").html(description)
+	$("#popup").css("display", "block")
+  }
