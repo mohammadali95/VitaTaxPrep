@@ -1,14 +1,17 @@
-#VITA TAX PREP
-## Developing a detailed scheduling system for all volunteers to sign up for all United Way events
+# VITA TAX PREP
+Developing a detailed scheduling system for volunteers to sign up for United Way of Central Arkansas events.
 
-## To run:
-## For Mac
-## Open a Terminal
-## Paste and Run this line: export FLASK_APP=website.py
-## Paste and Run this line: flask run
-## For Windows, you must use 'set' instead of 'export'
+# How to Run
 
-
-
-
-## ps -fA | grep python
+## Mac
+Open a Terminal and enter the following commands.
+```
+export FLASK_APP=website.py
+flask run
+```
+## Windows
+From the directory containing the file `website.py`, enter the following commands in the Command Line.
+```
+set FLASK_APP=website.py
+flask run
+```
