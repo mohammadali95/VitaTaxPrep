@@ -12,39 +12,39 @@ def eventsPage():
 		events = cur.fetchall()
 		return render_template('events.html', events=events)
 
-@app.route('/admin')
-def adminPage():
-	con = sqlite3.connect('VITA.db')
-    c = con.cursor()
-    if request.method == 'GET':
-        c.execute('SELECT * FROM volunteers')
-        data = c.fetchall()
-        return render_template('admin.html', data = data)
-    else:
-        events = []
-        name = request.form['VolName']
-        if name != "":
-            string = str(buildNameQuery(name))
-            print(string)
-            print(c.execute(string))
-            c.execute(string)
-            data = c.fetchall()
-            return render_template('admin.html', data=data)
-		for event in eventsIn:
-            if request.form.get(event, False) == 'on':
-                events.append(event)
-        string = buildEventsQuery(events)
-        if string == "SELECT * FROM volunteers WHERE event = ":
-            c.execute("SELECT * FROM volunteers WHERE event = Null")
-            data = c.fetchall()
-            return render_template('admin.html', data=data)
-        c.execute(string)
-        data = c.fetchall()
-        return render_template('admin.html', data=data)
-	
+		@app.route('/admin')
+		def adminPage():
+			con = sqlite3.connect('VITA.db')
+			c = con.cursor()
+			if request.method == 'GET':
+				c.execute('SELECT * FROM volunteers')
+				data = c.fetchall()
+				return render_template('admin.html', data = data)
+			else:
+				events = []
+				name = request.form['VolName']
+				if name != "":
+					string = str(buildNameQuery(name))
+					print(string)
+					print(c.execute(string))
+					c.execute(string)
+					data = c.fetchall()
+					return render_template('admin.html', data=data)
+					for event in eventsIn:
+						if request.form.get(event, False) == 'on':
+							events.append(event)
+							string = buildEventsQuery(events)
+							if string == "SELECT * FROM volunteers WHERE event = ":
+								c.execute("SELECT * FROM volunteers WHERE event = Null")
+								data = c.fetchall()
+								return render_template('admin.html', data=data)
+								c.execute(string)
+								data = c.fetchall()
+								return render_template('admin.html', data=data)
+
 def buildNameQuery(name):
-    execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
-    return execute
+	execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
+	return execute
 
 def buildEventsQuery(events):
     print(events)
@@ -62,7 +62,7 @@ def buildEventsQuery(events):
             execute +=  "'" + eventsIn[i] + "'"
         print(execute)
         return execute
-	
+
 @app.route('/new_volunteer',methods = ['POST', 'GET'])
 def new_volunteer():
    if request.method == 'POST':
