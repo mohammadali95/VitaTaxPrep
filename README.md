@@ -2,7 +2,7 @@
 Developing a detailed scheduling system for volunteers to sign up for United Way of Central Arkansas events.
 
 # Dependencies
-This project depends on the following software.
+This project depends on the following software.  
 [Python 3](https://www.python.org/downloads/)  
 [Flask](http://flask.pocoo.org/)
 
