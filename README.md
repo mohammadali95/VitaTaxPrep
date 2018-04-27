@@ -1,6 +1,10 @@
 # VITA TAX PREP
 Developing a detailed scheduling system for volunteers to sign up for United Way of Central Arkansas events.
 
+# Dependencies
+[Python 3](https://www.python.org/downloads/)
+[Flask](http://flask.pocoo.org/)
+
 # How to Run
 
 ## Mac
