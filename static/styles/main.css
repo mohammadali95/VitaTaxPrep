@@ -20,7 +20,7 @@ th {
   padding: 8px;
 }
 tr:nth-child(even) {
-    background-color: #a7a8e5;
+    background-color: #c9ddff;
 }
 div.tableContainer {
 	clear: both;
