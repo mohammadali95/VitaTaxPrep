@@ -3,6 +3,7 @@
   padding-bottom: 30px;
 }
 
+
 .event-img:hover,
 .event-img:focus {
   cursor: pointer;
@@ -36,19 +37,6 @@
     border: 1px solid #888;
     width: 80%;
     text-align: center;
-}
-
-p.modal-content {
-  font-size: 16px;
-}
-
-/* Trying to align checkbox boxes to the left within their heading as of 4/20/2018 */
-/* This aligns it to the left, but to the left of the whole figure. */
-/* Ideally, only the boxes should be left aligned while the whole thing stays cenered in the figure. */
-#langs,
-#hours {
-  align-items: center;
-  text-align: left;
 }
 
 /* The Close Button */

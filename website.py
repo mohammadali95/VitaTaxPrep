@@ -3,12 +3,16 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation'}
+<<<<<<< HEAD
 hoursIn = {'9to10':'9to10', '10to11':'10to11', '11tonoon':'11tonoon', 'noonto1':'noonto1', '1to2':'1to2', '2to3':'2to3'}
+=======
+>>>>>>> origin/master
 
 @app.route('/events')
 def eventsPage():
     return render_template('events.html')
 
+<<<<<<< HEAD
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
     con = sqlite3.connect('VITA.db')
@@ -42,6 +46,41 @@ def adminPage():
 def buildNameQuery(name):
     execute = 'SELECT * FROM volunteers WHERE name LIKE ' + "'" + name + "%'"
     return execute
+=======
+		@app.route('/admin')
+		def adminPage():
+			con = sqlite3.connect('VITA.db')
+			c = con.cursor()
+			if request.method == 'GET':
+				c.execute('SELECT * FROM volunteers')
+				data = c.fetchall()
+				return render_template('admin.html', data = data)
+			else:
+				events = []
+				name = request.form['VolName']
+				if name != "":
+					string = str(buildNameQuery(name))
+					print(string)
+					print(c.execute(string))
+					c.execute(string)
+					data = c.fetchall()
+					return render_template('admin.html', data=data)
+					for event in eventsIn:
+						if request.form.get(event, False) == 'on':
+							events.append(event)
+							string = buildEventsQuery(events)
+							if string == "SELECT * FROM volunteers WHERE event = ":
+								c.execute("SELECT * FROM volunteers WHERE event = Null")
+								data = c.fetchall()
+								return render_template('admin.html', data=data)
+								c.execute(string)
+								data = c.fetchall()
+								return render_template('admin.html', data=data)
+
+def buildNameQuery(name):
+	execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
+	return execute
+>>>>>>> origin/master
 
 def buildEventsQuery(events):
     print(events)
@@ -60,7 +99,11 @@ def buildEventsQuery(events):
         print(execute)
         return execute
 
+<<<<<<< HEAD
 @app.route('/new_volunteer', methods = ['POST', 'GET'])
+=======
+@app.route('/new_volunteer',methods = ['POST', 'GET'])
+>>>>>>> origin/master
 def new_volunteer():
    if request.method == 'POST':
       try:
