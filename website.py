@@ -3,67 +3,69 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation'}
+hoursIn = {'9to10':'9to10', '10to11':'10to11', '11tonoon':'11tonoon', 'noonto1':'noonto1', '1to2':'1to2', '2to3':'2to3'}
+
 
 @app.route('/events')
 def eventsPage():
-	with sqlite3.connect("VITA.db") as con:
-		cur = con.cursor()
-		cur.execute("SELECT name, image, description FROM events")
-		events = cur.fetchall()
-		return render_template('events.html', events=events)
+    with sqlite3.connect("VITA.db") as con:
+        cur = con.cursor()
+        cur.execute("SELECT name, image, description FROM events")
+        events = cur.fetchall()
+        return render_template("events.html", events=events)
 
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
-	con = sqlite3.connect('VITA.db')
-	c = con.cursor()
-	if request.method == 'GET':
-		c.execute('SELECT * FROM volunteers')
-		data = c.fetchall()
-		return render_template('admin.html', data = data)
-	else:
-		events = []
-		name = request.form['VolName']
-		if name != "":
-			string = str(buildNameQuery(name))
-			print(string)
-			print(c.execute(string))
-			c.execute(string)
-			data = c.fetchall()
-			return render_template('admin.html', data=data)
-		for event in eventsIn:
-			if request.form.get(event, False) == 'on':
-				events.append(event)
-			string = buildEventsQuery(events)
-		if string == "SELECT * FROM volunteers WHERE event = ":
-			c.execute("SELECT * FROM volunteers WHERE event = Null")
-			data = c.fetchall()
-			return render_template('admin.html', data=data)
-		c.execute(string)
-		data = c.fetchall()
-		return render_template('admin.html', data=data)
-	
+    con = sqlite3.connect('VITA.db')
+    c = con.cursor()
+    if request.method == 'GET':
+        c.execute('SELECT * FROM volunteers')
+        data = c.fetchall()
+        return render_template('admin.html', data = data)
+    else:
+        events = []
+        name = request.form.get('VolName')
+        if name != None:
+            string = str(buildNameQuery(name))
+            print(string)
+            print(c.execute(string))
+            c.execute(string)
+            data = c.fetchall()
+            return render_template('admin.html', data=data)
+        for event in eventsIn:
+            if request.form.get(event, False) == 'on':
+                events.append(event)
+        string = buildEventsQuery(events)
+        if string == "SELECT * FROM volunteers WHERE event = ":
+            c.execute("SELECT * FROM volunteers WHERE event = Null")
+            data = c.fetchall()
+            return render_template('admin.html', data=data)
+        c.execute(string)
+        data = c.fetchall()
+        return render_template('admin.html', data=data)
+
 def buildNameQuery(name):
-	execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
-	return execute
+    execute = 'SELECT * FROM volunteers WHERE name LIKE ' + "'" + name + "%'"
+    return execute
 
 def buildEventsQuery(events):
-	print(events)
-	execute = 'SELECT * FROM volunteers WHERE event = '
-	if len(events) > 1:
-		for i in events:
-			if i == events[-1]:
-				execute += "'" + eventsIn[i] + "'"
-			else:
-				execute += "'" + eventsIn[i] + "'" + ' OR event = '
-		print(execute)
-		return execute
-	else:
-		for i in events:
-			execute +=  "'" + eventsIn[i] + "'"
-		print(execute)
-		return execute
-	
-@app.route('/new_volunteer',methods = ['POST', 'GET'])
+    print(events)
+    execute = 'SELECT * FROM volunteers WHERE event = '
+    if len(events) > 1:
+        for i in events:
+            if i == events[-1]:
+                execute += "'" + eventsIn[i] + "'"
+            else:
+                execute += "'" + eventsIn[i] + "'" + ' OR event = '
+        print(execute)
+        return execute
+    else:
+        for i in events:
+            execute +=  "'" + eventsIn[i] + "'"
+        print(execute)
+        return execute
+
+@app.route('/new_volunteer', methods = ['POST', 'GET'])
 def new_volunteer():
    if request.method == 'POST':
       try:
@@ -76,13 +78,17 @@ def new_volunteer():
          phone = request.form['phone']
          dob = request.form['date']
          event = request.form['event']
+         timeList = []
+         for time in hoursIn:
+             if request.form.get(time, False) == 'on':
+                 timeList.append(time)
+         print(timeList)
          language = 'English'
-         print(name, address, city, state, zipcode, email, dob, event, language)
 
          with sqlite3.connect("/Users/michaelspainhour/Documents/workspace/VitaTaxPrep/VITA.db") as con:
              cur = con.cursor()
-             cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,language) )
-
+             print("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,timeList,language) )
+             cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,str(timeList),language) )
              con.commit()
              msg = "Record successfully added"
       except:

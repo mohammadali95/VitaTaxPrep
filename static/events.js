@@ -14,4 +14,4 @@ function popup(name, description) {
 	$("#eventName").html(name)
 	$("#description").html(description)
 	$("#popup").css("display", "block")
-  }
+}

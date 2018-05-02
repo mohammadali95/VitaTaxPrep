@@ -6,13 +6,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"><br><br>
   </head>
   <body>
+  <header>
+    <div class ="heading" ></div>
+    <div class ="heading2" ></div>
+    <div class ="heading3" ></div>
+
+    <div class ="fb" ></div>
+    <div class ="img2" ></div>
+    <div class ="twit" ></div>
+
+    <div class ="in" ></div>
+    <div class ="youtube" ></div>
+    <div class ="border"></div>
+    <div class ="donate"></div>
+    <div class ="vol"></div>
+    <div class ="share"></div>
+    <p class= "donate"> </p>   
+  </header>
 	<section id="uw-image" class="container">
       <img class="center-block" src="https://www.uwcark.org/sites/uwcark.org/files/United%20Way%20Special%20Events_0_0.png"/>
 	</section>
 	{% for event in events %}
 		<figure class='col-sm-6 text-center'>
 			<h2>{{ event[0] }}</h2>
-			<img src="{{event[1]}}" class="event-img" style="width:455px;height:256px" onclick="popup( '{{event[0]}}' , '{{event[2]}}' )" />
+			<img src="{{event[1]}}" style="width:455px;height:256px" onclick="popup( '{{event[0]}}' , '{{event[2]}}' )" />
 		</figure>
 	{% else %}
 		<em>No events found.</em>
@@ -45,12 +62,12 @@
               <figure class="col-sm-4">
                 <font size="4"> State </font>
                 <br>
-                <input type="text" name="state">
+                <input type="text" name="state" pattern="[A-Z]{2}" maxlength="2" title="Two letter state abbreviation">
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> ZIP Code </font>
                 <br>
-                <input type="text" name="zip">
+                <input type="text" name="zip" pattern="[0-9]{5}" maxlength="5" title="Five digit ZIP Code">
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> Email Address </font>
@@ -62,7 +79,7 @@
               <figure class="col-sm-4">
                 <font size="4"> Phone Number </font>
                 <br>
-                <input type="text" name="phone">
+                <input type="text" name="phone" pattern="[0-9]{10}" maxlength="10">
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> Date of Birth </font>
@@ -73,12 +90,9 @@
                 <font size="4"> Volunteering For </font>
                 <br>
                 <select name="event">
-                  <option value="Jeans and Bling">Jeans and Bling</option>
-                  <option value="Stuff the Bus">Stuff the Bus</option>
-                  <option value="Campaign Coordinator Bootcamp">Campaign Coordinator Bootcamp</option>
-                  <option value="CEO Luncheon">CEO Luncheon</option>
-                  <option value="TurkeyTrot">TurkeyTrot</option>
-                  <option value="Free Tax Preparation">Free Tax Preparation</option>
+                {% for event in events %}
+					<option>{{ event[0] }}</option>
+				{% endfor %}
                 </select>
               </figure>
             </div>

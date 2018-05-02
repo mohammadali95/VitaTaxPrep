@@ -26,7 +26,7 @@ CREATE TABLE volunteers (
     email text NOT NULL,
     phone text NOT NULL,
     dob text NOT NULL,
+	hours text NOT NULL,
     event text NOT NULL,
     languages text NOT NULL
-
 );
