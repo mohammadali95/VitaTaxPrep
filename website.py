@@ -14,7 +14,6 @@ def eventsPage():
         events = cur.fetchall()
         return render_template("events.html", events=events)
 
-
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
     con = sqlite3.connect('VITA.db')
