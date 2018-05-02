@@ -28,5 +28,6 @@ CREATE TABLE volunteers (
     dob text NOT NULL,
 	hours text NOT NULL,
     event text NOT NULL,
+    hours text NOT NULL,
     languages text NOT NULL
 );

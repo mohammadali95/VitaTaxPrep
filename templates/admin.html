@@ -57,7 +57,7 @@
     <td>{{item[0]}}</td>
     <td>{{item[8]}}</td>
     <td>{{item[6]}}</td>
-    <td>  <input id="button" type="submit" name="submit" value="info"> </td>
+    <td>  <input class="hide-button" id="button" type="submit" name="submit" value="info" onclick="displayInfo('{{item[0]}}', '{{item[1]}}', '{{item[2]}}', '{{item[3]}}', '{{item[4]}}', '{{item[5]}}', '{{item[6]}}', '{{item[7]}}', '{{item[8]}}', '{{item[10]}}')"> </td>
   </tr>
   {% endfor %}
 </table>
@@ -68,16 +68,16 @@
       <figure class="col-sm-12" id="info">
          <div class="col-sm-8">
            <!-- where to put info -->
-           <p> Name: </p>
-           <p> Address: </p>
-           <p> City: </p>
-           <p> State: </p>
-           <p> Zip Code: </p>
-           <p> Email: </p>
-           <p> Phone: </p>
-           <p> Date of Birth: </p>
-           <p> Volunteering for: </p>
-           <p> Other languages spoken: </p>
+           <p id=infoName></p>
+           <p id=infoAddress></p>
+           <p id=infoCity></p>
+           <p id=infoState></p>
+           <p id=infoZIP></p>
+           <p id=infoEmail></p>
+           <p id=infoPhone></p>
+           <p id=infoDOB></p>
+           <p id=infoVolFor></p>
+           <p id=infoLanguages></p>
         </div>
         <div class="col-sm-4" id="button-box">
            <button> Edit Information </button>
@@ -100,7 +100,7 @@
         <div class=row>
         <h4> Event </h4>
           <form action= "{{ url_for('adminPage') }}" method="POST" class="adminPage" name=eventForm>
-        <input type = "checkbox" name="cc">
+             <input type = "checkbox" name="cc">
           <label for "cc"> Campaign Committee </label> <br>
              <input type = "checkbox" name="jandb">
           <label for "jandb">Jeans and Bling</label> <br>
@@ -143,7 +143,7 @@
           <option>Spanish </option>
 	        <option>French </option>
 	        <option>German </option>
-          <option>ASL</option>
+			<option>ASL</option>
 	        <option>Mandarin</option>
 	        <option>Hindi</option>
 	        <option>Arabic</option>

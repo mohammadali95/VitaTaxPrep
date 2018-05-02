@@ -14,6 +14,7 @@ def eventsPage():
         events = cur.fetchall()
         return render_template("events.html", events=events)
 
+
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
     con = sqlite3.connect('VITA.db')
@@ -45,8 +46,8 @@ def adminPage():
         return render_template('admin.html', data=data)
 
 def buildNameQuery(name):
-    execute = 'SELECT * FROM volunteers WHERE name LIKE ' + "'" + name + "%'"
-    return execute
+	execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
+	return execute
 
 def buildEventsQuery(events):
     print(events)
@@ -64,8 +65,8 @@ def buildEventsQuery(events):
             execute +=  "'" + eventsIn[i] + "'"
         print(execute)
         return execute
-
-@app.route('/new_volunteer', methods = ['POST', 'GET'])
+		
+@app.route('/new_volunteer',methods = ['POST', 'GET'])
 def new_volunteer():
    if request.method == 'POST':
       try:
