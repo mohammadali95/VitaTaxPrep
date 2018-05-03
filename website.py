@@ -16,33 +16,34 @@ def eventsPage():
 
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
-    con = sqlite3.connect('VITA.db')
-    c = con.cursor()
-    if request.method == 'GET':
-        c.execute('SELECT * FROM volunteers')
-        data = c.fetchall()
-        return render_template('admin.html', data = data)
-    else:
-        events = []
-        name = request.form.get('VolName')
-        if name != None:
-            string = str(buildNameQuery(name))
-            print(string)
-            print(c.execute(string))
-            c.execute(string)
-            data = c.fetchall()
-            return render_template('admin.html', data=data)
-        for event in eventsIn:
-            if request.form.get(event, False) == 'on':
-                events.append(event)
-        string = buildEventsQuery(events)
-        if string == "SELECT * FROM volunteers WHERE event = ":
-            c.execute("SELECT * FROM volunteers WHERE event = Null")
-            data = c.fetchall()
-            return render_template('admin.html', data=data)
-        c.execute(string)
-        data = c.fetchall()
-        return render_template('admin.html', data=data)
+	con = sqlite3.connect('VITA.db')
+	c = con.cursor()
+	if request.method == 'GET':
+		c.execute("SELECT * FROM volunteers JOIN hours ON volunteers.email = hours.email")
+		data = c.fetchall()
+		print(data)
+		return render_template('admin.html', data = data)
+	else:
+		events = []
+		name = request.form.get('VolName')
+		if name != None:
+			string = str(buildNameQuery(name))
+			print(string)
+			print(c.execute(string))
+			c.execute(string)
+			data = c.fetchall()
+			return render_template('admin.html', data=data)
+		for event in eventsIn:
+			if request.form.get(event, False) == 'on':
+				events.append(event)
+		string = buildEventsQuery(events)
+		if string == "SELECT * FROM volunteers WHERE event = ":
+			c.execute("SELECT * FROM volunteers WHERE event = Null")
+			data = c.fetchall()
+			return render_template('admin.html', data=data)
+		c.execute(string)
+		data = c.fetchall()
+		return render_template('admin.html', data=data)
 
 def buildNameQuery(name):
 	execute = 'SELECT * FROM volunteers WHERE name like ' + "'" + name + "%'"
@@ -67,37 +68,40 @@ def buildEventsQuery(events):
 		
 @app.route('/new_volunteer',methods = ['POST', 'GET'])
 def new_volunteer():
-   if request.method == 'POST':
-      try:
-         name = request.form['name']
-         address = request.form['address']
-         city = request.form['city']
-         state = request.form['state']
-         zipcode = request.form['zip']
-         email = request.form['email']
-         phone = request.form['phone']
-         dob = request.form['date']
-         event = request.form['event']
-         timeList = []
-         for time in hoursIn:
-             if request.form.get(time, False) == 'on':
-                 timeList.append(time)
-         print(timeList)
-         language = 'English'
-
-         with sqlite3.connect("/Users/michaelspainhour/Documents/workspace/VitaTaxPrep/VITA.db") as con:
-             cur = con.cursor()
-             print("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,timeList,language) )
-             cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,event,str(timeList),language) )
-             con.commit()
-             msg = "Record successfully added"
-      except:
-         con.rollback()
-         msg = "error in insert operation"
-
-      finally:
-         return render_template("results.html",msg = msg)
-         con.close()
-
+	if request.method == 'POST':
+		try:
+			name = request.form['name']
+			address = request.form['address']
+			city = request.form['city']
+			state = request.form['state']
+			zipcode = request.form['zip']
+			email = request.form['email']
+			phone = request.form['phone']
+			dob = request.form['date']
+			event = request.form['event']
+			language = 'English'
+			timeList = []
+			for time in hoursIn:
+				if request.form.get(time, False) == 'on':
+					timeList.append(time)
+			print(timeList)
+			with sqlite3.connect("VITA.db") as con:
+				cur = con.cursor()
+				print("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,language) )
+				cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (name,address,city,state,zipcode,email,phone,dob,language) )
+				print("INSERT INTO hours VALUES (?,?,?)", email, event, timeList)
+				cur.execute("INSERT INTO hours VALUES (?,?,?)", email, event, timeList)
+				con.commit()
+				msg = "Record successfully added"
+				print("two")
+		except:
+			print("one")
+			con.rollback()
+			msg = "error in insert operation"
+		finally:
+			return render_template("results.html",msg = msg)
+			con.close()
+			
+					
 if __name__ == '__main__':
     app.run(debug=True)
