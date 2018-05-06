@@ -78,9 +78,9 @@
      </div>
    <div class = 'col-md-1'></div> </div> </div></div>
 
-        
+
 <div class = 'toolbar'>
-   <div class = 'row'> 
+   <div class = 'row'>
      <div class = 'col-lg-2'>ABOUT US</div>
      <div class = 'col-lg-2'>OUR WORK</div>
      <div class = 'col-lg-2'>GET INVOLVED</div>
@@ -109,9 +109,9 @@
   {% for item in data %}
   <tr>
     <td>{{item[0]}}</td>
-    <td>{{item[8]}}</td>
+    <td>{{item[10]}}</td>
     <td>{{item[6]}}</td>
-    <td>  <input class="hide-button" id="button" type="submit" name="submit" value="info" onclick="displayInfo('{{item[0]}}', '{{item[1]}}', '{{item[2]}}', '{{item[3]}}', '{{item[4]}}', '{{item[5]}}', '{{item[6]}}', '{{item[7]}}', '{{item[8]}}', '{{item[10]}}')"> </td>
+    <td>  <input class="hide-button" id="button" type="submit" name="submit" value="info" onclick="displayInfo('{{item[0]}}', '{{item[1]}}', '{{item[2]}}', '{{item[3]}}', '{{item[4]}}', '{{item[5]}}', '{{item[6]}}', '{{item[7]}}', '{{item[10]}}', '{{item[11]}}', '{{item[8]}}')"> </td>
   </tr>
   {% endfor %}
 </table>
@@ -122,16 +122,17 @@
       <figure class="col-sm-12" id="info">
          <div class="col-sm-8">
            <!-- where to put info -->
-           <p id=infoName></p>
-           <p id=infoAddress></p>
-           <p id=infoCity></p>
-           <p id=infoState></p>
-           <p id=infoZIP></p>
-           <p id=infoEmail></p>
-           <p id=infoPhone></p>
-           <p id=infoDOB></p>
-           <p id=infoVolFor></p>
-           <p id=infoLanguages></p>
+           <span>Name: </span><span id=infoName></span></br>
+           <span>Address: </span><span id=infoAddress></span></br>
+           <span>City: </span><span id=infoCity></span></br>
+           <span>State: </span><span id=infoState></span></br>
+           <span>ZIP Code: </span><span id=infoZIP></span></br>
+           <span>Email Address: </span><span id=infoEmail></span></br>
+           <span>Phone Number: </span><span id=infoPhone></span></br>
+           <span>Date of Birth: </span><span id=infoDOB></span></br>
+           <span>Volunteering For: </span><span id=infoVolFor></span></br>
+		   <span>Hours: </span><span id=infoHoursFor></span></br>
+           <span>Languages Spoken: </span><span id=infoLanguages></span></br>
         </div>
         <div class="col-sm-4" id="button-box">
            <button> Edit Information </button>
@@ -154,22 +155,16 @@
         <div class=row>
         <h4> Event </h4>
           <form action= "{{ url_for('adminPage') }}" method="POST" class="adminPage" name=eventForm>
-             <input type = "checkbox" name="cc">
-          <label for "cc"> Campaign Committee </label> <br>
              <input type = "checkbox" name="jandb">
           <label for "jandb">Jeans and Bling</label> <br>
              <input type = "checkbox" name="tt">
           <label for "tt">Turkey Trot</label> <br>
              <input type = "checkbox" name="stheb">
           <label for "stheb">Stuff the Bus</label> <br>
-             <input type = "checkbox" name="ae">
-          <label for "ae">Agency Evaluation (Site Visit)</label> <br>
+             <input type = "checkbox" name="pp" />
+          <label for "pp">Pillar Party</label>
              <input type = "checkbox" name="vftp">
           <label for "vftp">VITA Free Tax Prep</label> <br>
-             <input type = "checkbox" name="ofta">
-          <label for "ofta">One of the Agencies</label> <br>
-             <input type = "checkbox" name="other">
-          <label for "other">Other</label> <br>
           <button type="submit"> Sort </button>
           </form>
           </select>
