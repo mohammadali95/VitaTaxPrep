@@ -2,9 +2,9 @@ import sqlite3
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
-eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation'}
+eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation', 'pp':"Pillar Party", }
 hoursIn = {'9to10':'9to10', '10to11':'10to11', '11tonoon':'11tonoon', 'noonto1':'noonto1', '1to2':'1to2', '2to3':'2to3'}
-
+languagesIn = {"English", "Spanish"}
 
 @app.route('/events')
 def eventsPage():
@@ -13,7 +13,6 @@ def eventsPage():
         cur.execute("SELECT name, image, description FROM events")
         events = cur.fetchall()
         return render_template("events.html", events=events)
-
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
 	con = sqlite3.connect('VITA.db')
@@ -65,7 +64,7 @@ def buildEventsQuery(events):
             execute +=  "'" + eventsIn[i] + "'"
         print(execute)
         return execute
-		
+
 @app.route('/new_volunteer',methods = ['POST', 'GET'])
 def new_volunteer():
 	if request.method == 'POST':
@@ -78,12 +77,16 @@ def new_volunteer():
 		phone = request.form['phone']
 		dob = request.form['date']
 		event = request.form['event']
-		language = 'English'
+		languages = []
 		timeList = []
-		for time in hoursIn:
-			if request.form.get(time, False) == 'on':
-				timeList.append(time)
+        for time in hoursIn:
+            if request.form.get(time, False) == 'on':
+                timeList.append(time)
+        for lang in languagesIn:
+            if request.form.get(lang, False) == 'on':
+                languages.append(lang)
 		print(timeList)
+        languagesStr = ','.join(languages)
 		timeStr = ','.join(timeList)
 		con = sqlite3.connect("VITA.db")
 		cur = con.cursor()
@@ -93,7 +96,5 @@ def new_volunteer():
 		msg = "Record successfully added"
 		con.close()
 		return render_template("results.html", msg=msg)
-			
-					
 if __name__ == '__main__':
     app.run(debug=True)
