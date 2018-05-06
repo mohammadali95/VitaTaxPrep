@@ -46,7 +46,7 @@ def adminPage():
 		return render_template('admin.html', data=data)
 
 def buildNameQuery(name):
-	execute = 'SELECT * FROM volunteers JOIN hours ON volunteers.email = hours.email WHERE volunteers.name like ' + "'" + name + "%'"
+	execute = 'SELECT DISTINCT * FROM volunteers JOIN hours ON volunteers.email = hours.email WHERE volunteers.name like ' + "'" + name + "%'"
 	return execute
 
 def buildEventsQuery(events):
