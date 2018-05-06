@@ -87,12 +87,9 @@ def new_volunteer():
 		timeStr = ','.join(timeList)
 		con = sqlite3.connect("VITA.db")
 		cur = con.cursor()
-		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zip), str(email), str(phone), str(dob), str(language)))
-		print("Volunteer information added")
+		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zipcode), str(email), str(phone), str(dob), str(language)))
 		cur.execute("INSERT INTO hours VALUES (?,?,?)", (str(email), str(event), str(timeStr)))
-		print("Volunteer hours added")
 		con.commit()
-		print("Database changes committed")
 		msg = "Record successfully added"
 		con.close()
 		return render_template("results.html", msg=msg)
