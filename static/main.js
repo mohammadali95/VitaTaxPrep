@@ -32,17 +32,17 @@ $(document).ready(function(){
   })
 });
 
-function displayInfo(name, address, city, state, zip, email, phone, dob, volFor, languages) {
-	$('#infoName').html("Name: " + name)
-	console.log(name + city, state + zip + email + phone + dob + volFor + languages)
-	$('#infoAddress').html("Address: " + address)
-	$('#infoCity').html("City: " + city)
-	$('#infoState').html("State: " + state)
-	$('#infoZIP').html("ZIP Code: " + zip)
-	$('#infoEmail').html("Email: " + email)
-	$('#infoPhone').html("Phone Number: " + phone)
-	$('#infoDOB').html("Date of Birth: " + dob)
-	$('#infoVolFor').html("Volunteering For: " + volFor)
-	$('#infoLanguages').html("Languages Spoken: " + languages)
+function displayInfo(name, address, city, state, zip, email, phone, dob, volFor, hours, languages) {
+	$('#infoName').html(name)
+	$('#infoAddress').html(address)
+	$('#infoCity').html(city)
+	$('#infoState').html(state)
+	$('#infoZIP').html(zip)
+	$('#infoEmail').html(email)
+	$('#infoPhone').html(phone)
+	$('#infoDOB').html(dob)
+	$('#infoVolFor').html(volFor)
+	$('#infoHoursFor').html(hours)
+	$('#infoLanguages').html(languages)
 	$('#info').show()
 }
