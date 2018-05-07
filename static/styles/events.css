@@ -8,6 +8,11 @@
   cursor: pointer;
 }
 
+.row2{
+  position: relative;
+  top: -35px;
+}
+
 .row {
   margin: 15px;
 }
