@@ -86,9 +86,8 @@ def new_volunteer():
 		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zipcode), str(email), str(phone), str(dob), str(languages)))
 		cur.execute("INSERT INTO hours VALUES (?,?,?)", (str(email), str(event), str(timeStr)))
 		con.commit()
-		msg = "Record successfully added"
 		con.close()
-		return render_template("results.html", msg=msg)
+		return eventsPage()
 
 if __name__ == '__main__':
     app.run(debug=True)
