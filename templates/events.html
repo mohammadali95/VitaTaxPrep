@@ -740,46 +740,46 @@
               <figure class="col-sm-4">
                 <font size="4"> Name </font>
                 <br>
-                <input type="text" name="name">
+                <input type="text" name="name" required>
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> Address </font>
                 <br>
-                <input type="text" name="address">
+                <input type="text" name="address" required>
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> City </font>
                 <br>
-                <input type="text" name="city">
+                <input type="text" name="city" required>
               </figure>
             </div>
             <div class="row">
               <figure class="col-sm-4">
                 <font size="4"> State </font>
                 <br>
-                <input type="text" name="state" pattern="[A-Z]{2}" maxlength="2" title="Two letter state abbreviation">
+                <input type="text" name="state" required pattern="[A-Z]{2}" maxlength="2" title="Two letter state abbreviation">
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> ZIP Code </font>
                 <br>
-                <input type="text" name="zip" pattern="[0-9]{5}" maxlength="5" title="Five digit ZIP Code">
+                <input type="text" name="zip" required pattern="[0-9]{5}" maxlength="5" title="Five digit ZIP Code">
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> Email Address </font>
                 <br>
-                <input type="text" name="email">
+                <input type="text" name="email" required>
               </figure>
             </div>
             <div class="row">
               <figure class="col-sm-4">
                 <font size="4"> Phone Number </font>
                 <br>
-                <input type="text" name="phone" pattern="[0-9]{10}" maxlength="10">
+                <input type="text" name="phone" required pattern="[0-9]{10}" maxlength="10">
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> Date of Birth </font>
                 <br>
-                <input type="date" name="date">
+                <input type="date" name="date" required>
               </figure>
               <figure class="col-sm-4">
                 <font size="4"> Volunteering For </font>
@@ -795,7 +795,7 @@
               <figure class="col-sm-6 text-left" id="hours">
                 <font size="4"> Hours </font>
                 <br>
-                <form>
+                <form required>
                   <input type="checkbox" name="9to10">
                   <label for "9to10">9:00-10:00</label> <br>
                   <input type="checkbox" name="10to11">
