@@ -198,3 +198,205 @@ thead.fixedHeader th {
 input[type=submit]:hover {
   text-decoration: underline;
 }
+
+/* CSS for styling header taken from UW website. We did not write this. */
+.menu{border:none;list-style:none;text-align:left;}
+.sf-menu,.sf-menu *{list-style:none;margin:0;padding:0;}
+.sf-menu{line-height:1.0;z-index:497;}
+.sf-menu ul{left:0;position:absolute;top:-99999em;width:12em;}
+.sf-menu ul li{width:100%;}
+.sf-menu li{float:left;position:relative;z-index:498;}
+.sf-menu a{display:block;position:relative;}
+.sf-menu li:hover,.sf-menu li:hover ul{z-index:499;}
+.sf-menu li:hover > ul{left:0;top:2.5em;}
+.sf-menu li li:hover > ul{left:12em;top:0;}
+.sf-menu.menu,.sf-menu.menu ul,.sf-menu.menu li{margin:0;}
+.sf-hidden{left:-99999em!important;top:-99999em!important;}
+.sf-menu.sf-horizontal.sf-shadow ul{background:url(https://www.uwcark.org/sites/uwcark.org/libraries/superfish/images/shadow.png) no-repeat right bottom;padding:0 8px 9px 0!important;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:8px;-moz-border-radius-topright:8px;-moz-border-radius-bottomleft:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;}
+.sf-menu.sf-style-default{float:left;margin-bottom:1em;padding:0;}
+.sf-menu.sf-style-default ul{padding-left:0;}
+.sf-menu.sf-style-default a,.sf-menu.sf-style-default a:visited{border-left:1px solid #fff;border-top:1px solid #cfdeff;color:#13a;padding:0.75em 1em;}
+.sf-menu.sf-style-default li{background:#bdd2ff;}
+.sf-menu.sf-style-default li li{background:#aabde6;}
+.sf-menu.sf-style-default li li li{background:#9aaedb;}
+.sf-menu.sf-style-default li:hover,.sf-menu.sf-style-default a:focus,.sf-menu.sf-style-default a:hover,.sf-menu.sf-style-default a:active{background:#cfdeff;outline:0;}
+.sf-menu,.sf-menu *{list-style:none;margin:0;padding:0;}
+.sf-menu{line-height:1.0;z-index:497;}
+.sf-menu ul{left:0;position:absolute;top:-99999em;width:12em;}
+.sf-menu ul li{width:100%;}
+.sf-menu li{float:left;position:relative;z-index:498;}
+.sf-menu a{display:block;position:relative;}
+.sf-menu li:hover,.sf-menu li:hover ul{z-index:499;}
+.sf-menu li:hover > ul{left:0;top:2.5em;}
+.sf-menu li li:hover > ul{left:12em;top:0;}
+.sf-menu.menu,.sf-menu.menu ul,.sf-menu.menu li{margin:0;}
+.sf-hidden{left:-99999em!important;top:-99999em!important;}
+.sf-menu.sf-horizontal.sf-shadow ul{background:url(https://www.uwcark.org/sites/uwcark.org/libraries/superfish/images/shadow.png) no-repeat right bottom;padding:0 8px 9px 0!important;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:8px;-moz-border-radius-topright:8px;-moz-border-radius-bottomleft:8px;border-top-right-radius:8px;border-bottom-left-radius:8px;}
+.sf-menu.sf-style-default{float:left;margin-bottom:1em;padding:0;}
+.sf-menu.sf-style-default ul{padding-left:0;}
+.sf-menu.sf-style-default a,.sf-menu.sf-style-default a:visited{border-left:1px solid #fff;border-top:1px solid #cfdeff;color:#13a;padding:0.75em 1em;}
+.sf-menu.sf-style-default li{background:#bdd2ff;}
+.sf-menu.sf-style-default li li{background:#aabde6;}
+.sf-menu.sf-style-default li li li{background:#9aaedb;}
+.sf-menu.sf-style-default li:hover,.sf-menu.sf-style-default a:focus,.sf-menu.sf-style-default a:hover,.sf-menu.sf-style-default a:active{background:#cfdeff;outline:0;}
+a:link,a:visited{color:#10167f;outline:medium none;text-decoration:none;}
+a:hover{color:#000064;text-decoration:underline;}
+a:active{color:#10167f;outline:medium none;text-decoration:none;}
+ul{list-style:outside none disc;}
+ul ul{padding-top:0.5em;}
+ul{margin-bottom:13px;}
+a:focus{outline:thin dotted;}
+a:active,a:hover{outline:0;}
+ul{margin:1em 0;}
+ul{padding:0 0 0 40px;}
+*,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;*behavior:url(https://www.uwcark.org/sites/uwcark.org/themes/unitedwayr11/behaviors/box-sizing/boxsizing.php);}
+a:link,a:visited{color:#10167f;outline:medium none;text-decoration:none;}
+a:hover{color:#000064;text-decoration:underline;}
+a:active{color:#10167f;outline:medium none;text-decoration:none;}
+ul{list-style:outside none disc;}
+ul ul{padding-top:0.5em;}
+ul{margin-bottom:13px;}
+.l-page a{color:#10167f;text-decoration:none!important;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;font-size:13px;}
+.l-region--menu{background-color:#10167f;}
+.main-menu-superfish-block .block__content *{background:none repeat scroll 0 0 transparent!important;border:medium none!important;list-style-image:none;list-style-type:none;margin:0;padding:0;font-family:"din-condensed-web";}
+.main-menu-superfish-block .block__content a{color:white!important;font-size:20px;height:55px;line-height:55px;padding:0 26px;text-decoration:none;text-transform:uppercase;transition:all 0.3s ease-in-out 0s;}
+.main-menu-superfish-block .block__content a:hover{background-color:white!important;color:#10167f!important;opacity:0.9;}
+.main-menu-superfish-block .block__content ul li{border-left:1px solid #7d81a1!important;}
+.main-menu-superfish-block .block__content ul li.first{border-left:0 none!important;}
+.main-menu-superfish-block .block__content ul ul{background:none repeat scroll 0 0 #131549;border-radius:3px;display:none;opacity:0.99;padding:0 1px 1px;top:50px;}
+.main-menu-superfish-block .block__content ul li ul li a{border-bottom:1px solid #c0c0c0!important;border-right:medium none!important;border-left:medium none!important;font-size:18px;}
+@media screen and (max-width: 1310px){
+.main-menu-superfish-block .block__content a{font-size:16px;}
+}
+@media only screen and (min-width: 218px) and (max-width: 1120px){
+.main-menu-superfish-block{display:none;}
+}
+@media screen and (max-width: 1310px){
+.main-menu-superfish-block .block__content a{font-size:16px;}
+}
+.main-menu-superfish-block .block__content ul li ul li a{font-size:16px!important;}
+a:link,a:visited{color:#10167f;outline:medium none;text-decoration:none;}
+a:hover{color:#000064;text-decoration:underline;}
+a:active{color:#10167f;outline:medium none;text-decoration:none;}
+ul{list-style:outside none disc;}
+ul ul{padding-top:0.5em;}
+ul{margin-bottom:13px;}
+@media (min-width: 64em){
+.main-menu-superfish-block{display:none;}
+}
+@media (min-width: 70em){
+.main-menu-superfish-block{display:block;}
+.l-region{clear:both;}
+.l-region--menu{width:100%;float:right;margin-left:0;margin-right:0;clear:none;}
+}
+/*! CSS Used fontfaces */
+@font-face{font-family:din-condensed-web;src:url(https://use.typekit.com/af/fdff72/0000000000000000000146b3/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.com/af/fdff72/0000000000000000000146b3/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.com/af/fdff72/0000000000000000000146b3/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}
+
+.menu{border:none;list-style:none;text-align:left;}
+.menu .leaf{list-style-image:url(https://www.uwcark.org/sites/uwcark.org/themes/omega/omega/images/misc/menu-leaf.png?1379458577);list-style-type:square;}
+ul.jquerymenu li.parent{list-style:none;list-style-image:none;background-image:none;}
+ul.jquerymenu li.closed ul{display:none;}
+ul.jquerymenu li span.parent{position:absolute;margin-left:-15px;margin-top:6px;width:9px;height:9px;display:block;}
+ul.jquerymenu li.parent span.closed{background-image:url(https://www.uwcark.org/sites/all/modules/jquerymenu/images/controls.png);background-repeat:no-repeat;background-position:0px 0px;background-color:red;}
+ul.jquerymenu li.parent span.closed:after{content:"Expandible menu item";visibility:hidden;}
+ul.jquerymenu li.parent span.parent{cursor:pointer;}
+a:link,a:visited{color:#10167f;outline:medium none;text-decoration:none;}
+a:hover{color:#000064;text-decoration:underline;}
+a:active{color:#10167f;outline:medium none;text-decoration:none;}
+ul{list-style:outside none disc;}
+ul ul{padding-top:0.5em;}
+p,ul{margin-bottom:13px;}
+a:focus{outline:thin dotted;}
+a:active,a:hover{outline:0;}
+p{margin:1em 0;}
+ul{margin:1em 0;}
+ul{padding:0 0 0 40px;}
+img{border:0;-ms-interpolation-mode:bicubic;}
+*,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;*behavior:url(https://www.uwcark.org/sites/uwcark.org/themes/unitedwayr11/behaviors/box-sizing/boxsizing.php);}
+a:link,a:visited{color:#10167f;outline:medium none;text-decoration:none;}
+a:hover{color:#000064;text-decoration:underline;}
+a:active{color:#10167f;outline:medium none;text-decoration:none;}
+ul{list-style:outside none disc;}
+ul ul{padding-top:0.5em;}
+p,ul{margin-bottom:13px;}
+img{max-width:100%;}
+.l-page a{color:#10167f;text-decoration:none!important;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;font-size:13px;}
+.l-region--sliding-button{display:none;}
+.l-region.l-region--mobilebtn{background-color:#10167f;overflow:hidden;padding:0 20px;width:100%;display:none;}
+img{border:0 none;height:auto;max-width:100%;vertical-align:middle;}
+.site-branding__logo > img{margin:79px 0 0 0%;width:255px;}
+.live-united-block{margin-left:5%;}
+.donate-now-block{float:right;}
+.donate-now-block ul li{list-style:none;list-style-type:none;}
+.donate-now-block ul li a{font-family:"din-condensed-web";}
+.donate-now-block .block__content ul{margin:0px;padding:0px;}
+.donate-now-block li{display:inline;text-decoration:none;}
+.donate-now-block li:hover{opacity:0.6;}
+.donate-now-block .block__content ul li a{-webkit-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;font-size:19px;color:white;text-transform:uppercase;text-align:center;line-height:50px;}
+.donate-now-block li.help a{background-color:#10167f;display:inline-block;height:50px;width:117px;}
+.donate-now-block li.donate a{background-color:#F22F19;display:inline-block;height:50px;width:117px;}
+.social-media-block{text-align:right;float:right;width:74%;padding-top:15px;}
+.social-media-block img{cursor:pointer;width:47px;margin-left:5px;}
+.social-media-block img:hover{opacity:0.7;}
+.sliding-menu{display:none;}
+@media only screen and (min-width: 218px) and (max-width: 1120px){
+.l-region--sliding-button{display:block!important;}
+.sliding-menu{padding:10px 0px 5px;display:block;}
+.sliding-menu p{margin:0px;}
+.social-media-block{display:none;}
+.live-united-block{float:left;width:50%;margin:0;}
+.sliding-menu{display:block;float:right;width:50px;}
+.site-branding__logo > img{margin:54px 0 0;}
+.site-branding__logo img,.live-united-block img{margin-left:10px;height:auto!important;}
+.sliding-menu{margin-right:10px;}
+}
+@media only screen and (min-width: 550px) and (max-width: 1120px){
+.site-branding__logo > img{margin:17px 0 0 12px;}
+.donate-now-block{margin-right:10px;}
+.sliding-menu{clear:right;}
+.l-region.l-region--mobilebtn{display:block!important;}
+}
+@media only screen and (min-width: 0px) and (max-width: 425px){
+.site-branding__logo > img{margin:-20px 0 10px 15px!important;}
+}
+@media only screen and (min-width: 0px) and (max-width: 550px){
+.l-region.l-region--mobilebtn{display:block!important;}
+.site-branding__logo > img{margin:5px 0 5px 10px;float:left;clear:left;width:45%;}
+.donate-now-block{display:none;}
+}
+@media only screen and (min-width: 1024px) and (max-width: 1600px){
+.site-branding__logo > img{width:200px;}
+}
+.mobile-menu{position:relative;overflow:hidden;width:100%;}
+.mobile-menu .leaf{background:none repeat scroll 0 0 #ebebeb;}
+.mobile-menu li.leaf a{font-size:20px!important;}
+.mobile-menu .parent a{border:1px solid #ebebeb;}
+.mobile-menu ul li ul a{border:1px solid #969696!important;font-family:din-condensed-web!important;font-weight:normal;padding-left:40px!important;}
+.mobile-menu .parent a{border:1px solid #ebebeb;font-family:news-gothic-std;}
+.mobile-menu .block__content{background-color:white;}
+.mobile-menu .block__content ul.menu li a:hover{color:#ff9600;}
+.mobile-menu .block__content ul.menu li a{border-bottom:1px solid #ebebeb;color:#4f4f4f;display:block;*font-family:din-condensed-web;font-family:news-gothic-std;background-color:#ffffff!important;font-size:22px;font-weight:normal;padding:12px 0 4px 12px;text-decoration:none;text-transform:capitalize;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;}
+.mobile-menu .block__content ul.menu li{position:relative;list-style:outside none none;}
+.mobile-menu .block__content span.closed{background-color:transparent!important;background-image:url(https://www.uwcark.org/sites/uwcark.org/themes/unitedwayr11/images/pluss-01.png)!important;background-position:right bottom!important;background-size:38px auto;float:right;height:35px;margin-top:3px;position:absolute;width:65px;right:0;top:2px;}
+.mobile-menu .block__content ul{margin:0!important;padding:0!important;}
+a:link,a:visited{color:#10167f;outline:medium none;text-decoration:none;}
+a:hover{color:#000064;text-decoration:underline;}
+a:active{color:#10167f;outline:medium none;text-decoration:none;}
+ul{list-style:outside none disc;}
+ul ul{padding-top:0.5em;}
+p,ul{margin-bottom:13px;}
+@media (min-width: 64em){
+.l-branding{width:100%;float:right;margin-left:0;margin-right:0;clear:none;}
+.l-region--live-united{width:100%;float:right;margin-left:0;margin-right:0;clear:none;}
+}
+@media (min-width: 70em){
+.l-region{clear:both;}
+.l-region--live-united{width:31.91489%;float:left;margin-right:-100%;margin-left:17.02128%;clear:none;}
+.l-region--header1{width:31.91489%;float:right;margin-left:0;margin-right:0;clear:none;}
+.l-region--header2{width:40.42553%;float:right;margin-left:0;margin-right:0;clear:none;clear:right;}
+}
+/*! CSS Used fontfaces */
+@font-face{font-family:din-condensed-web;src:url(https://use.typekit.com/af/fdff72/0000000000000000000146b3/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.com/af/fdff72/0000000000000000000146b3/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.com/af/fdff72/0000000000000000000146b3/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}
+@font-face{font-family:news-gothic-std;src:url(https://use.typekit.com/af/dcaa11/00000000000000000001316b/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.com/af/dcaa11/00000000000000000001316b/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.com/af/dcaa11/00000000000000000001316b/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}
+@font-face{font-family:news-gothic-std;src:url(https://use.typekit.com/af/a73244/00000000000000000001316d/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.com/af/a73244/00000000000000000001316d/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.com/af/a73244/00000000000000000001316d/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}
+
