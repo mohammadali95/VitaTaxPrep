@@ -2,9 +2,9 @@ import sqlite3
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
-eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'Free Tax Preparation', 'pp':"Pillar Party", }
+eventsIn = {'jandb':'Jeans and Bling', 'tt':'Turkey Trot', 'stheb':'Stuff the Bus', 'vftp':'VITA Free Tax Preparation', 'pp':"Pillar Party", }
 hoursIn = {'9to10':'9to10', '10to11':'10to11', '11tonoon':'11tonoon', 'noonto1':'noonto1', '1to2':'1to2', '2to3':'2to3'}
-languagesIn = {"English", "Spanish"}
+languagesIn = {"English":"English", "Spanish":"Spanish"}
 
 @app.route('/events')
 def eventsPage():
@@ -13,6 +13,7 @@ def eventsPage():
         cur.execute("SELECT name, image, description FROM events")
         events = cur.fetchall()
         return render_template("events.html", events=events)
+
 @app.route('/admin', methods = ['POST', 'GET'])
 def adminPage():
 	con = sqlite3.connect('VITA.db')
@@ -27,8 +28,6 @@ def adminPage():
 		name = request.form.get('VolName')
 		if name != None:
 			string = str(buildNameQuery(name))
-			print(string)
-			print(c.execute(string))
 			c.execute(string)
 			data = c.fetchall()
 			return render_template('admin.html', data=data)
@@ -50,19 +49,17 @@ def buildNameQuery(name):
 
 def buildEventsQuery(events):
     print(events)
-    execute = 'SELECT * FROM volunteers JOIN hours ON volunteers.email = hours.email WHERE eventName = '
+    execute = 'SELECT DISTINCT * FROM volunteers JOIN hours ON volunteers.email = hours.email WHERE eventName = '
     if len(events) > 1:
         for i in events:
             if i == events[-1]:
                 execute += "'" + eventsIn[i] + "'"
             else:
                 execute += "'" + eventsIn[i] + "'" + ' OR hours.eventName = '
-        print(execute)
         return execute
     else:
         for i in events:
             execute +=  "'" + eventsIn[i] + "'"
-        print(execute)
         return execute
 
 @app.route('/new_volunteer',methods = ['POST', 'GET'])
@@ -79,22 +76,25 @@ def new_volunteer():
 		event = request.form['event']
 		languages = []
 		timeList = []
-        for time in hoursIn:
-            if request.form.get(time, False) == 'on':
-                timeList.append(time)
-        for lang in languagesIn:
-            if request.form.get(lang, False) == 'on':
-                languages.append(lang)
-		print(timeList)
-        languagesStr = ','.join(languages)
+		for time in hoursIn:
+			if request.form.get(time, False) == 'on':
+				print("yay!")
+				timeList.append(time)
+		for lang in languagesIn:
+			if request.form.get(lang, False) == 'on':
+				print("also yay!")
+				languages.append(lang)
+		languagesStr = ','.join(languages)
+		print(languagesStr)
 		timeStr = ','.join(timeList)
 		con = sqlite3.connect("VITA.db")
 		cur = con.cursor()
-		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zipcode), str(email), str(phone), str(dob), str(language)))
+		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zipcode), str(email), str(phone), str(dob), str(languagesStr)))
 		cur.execute("INSERT INTO hours VALUES (?,?,?)", (str(email), str(event), str(timeStr)))
 		con.commit()
 		msg = "Record successfully added"
 		con.close()
 		return render_template("results.html", msg=msg)
+
 if __name__ == '__main__':
     app.run(debug=True)
