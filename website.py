@@ -74,22 +74,16 @@ def new_volunteer():
 		phone = request.form['phone']
 		dob = request.form['date']
 		event = request.form['event']
-		languages = []
+		languages = ""
 		timeList = []
 		for time in hoursIn:
 			if request.form.get(time, False) == 'on':
 				print("yay!")
 				timeList.append(time)
-		for lang in languagesIn:
-			if request.form.get(lang, False) == 'on':
-				print("also yay!")
-				languages.append(lang)
-		languagesStr = ','.join(languages)
-		print(languagesStr)
 		timeStr = ','.join(timeList)
 		con = sqlite3.connect("VITA.db")
 		cur = con.cursor()
-		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zipcode), str(email), str(phone), str(dob), str(languagesStr)))
+		cur.execute("INSERT INTO volunteers VALUES (?,?,?,?,?,?,?,?,?)", (str(name), str(address), str(city), str(state), str(zipcode), str(email), str(phone), str(dob), str(languages)))
 		cur.execute("INSERT INTO hours VALUES (?,?,?)", (str(email), str(event), str(timeStr)))
 		con.commit()
 		msg = "Record successfully added"

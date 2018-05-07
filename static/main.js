@@ -73,6 +73,5 @@ function displayInfo(name, address, city, state, zip, email, phone, dob, volFor,
 	$('#infoDOB').html(dob)
 	$('#infoVolFor').html(volFor)
 	$('#infoHoursFor').html(hours)
-	$('#infoLanguages').html(languages)
 	$('#info').show()
 }
